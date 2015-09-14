@@ -19,4 +19,21 @@ describe Redminerb do
       ENV['HOME'] = real_home
     end
   end
+
+  describe '.init!' do
+    before do
+      @real_home = ENV['HOME']
+      ENV['HOME'] = SPECS_HOME_DIR
+
+      Redminerb.init!
+    end
+
+    after do
+      ENV['HOME'] = @real_home
+    end
+
+    it 'creates a Config instance' do
+      _(Redminerb.config).must_be_kind_of Redminerb::Config
+    end
+  end
 end

@@ -9,14 +9,20 @@ module Redminerb
   @initialized = false
 
   def init!
+    @config = Redminerb::Config.new
     @initialized = true
   end
 
   def end!
+    @config = nil
     @initialized = false
   end
 
   def initialized?
     @initialized
+  end
+
+  def config
+    @config
   end
 end
