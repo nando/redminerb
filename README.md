@@ -1,4 +1,8 @@
+[travis]: https://travis-ci.org/nando/redminerb
+
 # Redminerb
+
+[![Build Status](https://travis-ci.org/nando/redminerb.svg?branch=master)][travis]
 
 Redminerb is a command-line suite that speaks with our Redmine through its REST API.
 
