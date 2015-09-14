@@ -2,6 +2,10 @@
 require_relative 'spec_helper'
 
 describe Redminerb do
+  after do
+    Redminerb.end!
+  end
+
   describe 'initialization' do
     it 'should not be initialized before calling .init!' do
       _(Redminerb).wont_be :initialized?

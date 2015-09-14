@@ -11,6 +11,10 @@ module Redminerb
     @initialized = true
   end
 
+  def end!
+    @initialized = false
+  end
+
   def initialized?
     @initialized
   end
