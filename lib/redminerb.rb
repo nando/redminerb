@@ -1,5 +1,6 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
-require 'redminerb/version'
+require_relative 'redminerb/version'
+require_relative 'redminerb/config'
 
 # Main module 
 module Redminerb

@@ -13,7 +13,7 @@ describe Redminerb do
 
     it 'should be initialized after calling .init!' do
       real_home = ENV['HOME']
-      ENV['HOME'] = './fixtures/home'
+      ENV['HOME'] = SPECS_HOME_DIR
       Redminerb.init!
       _(Redminerb).must_be :initialized?
       ENV['HOME'] = real_home
