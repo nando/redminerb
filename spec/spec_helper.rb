@@ -4,7 +4,3 @@ require_relative '../lib/redminerb'
 require 'pry'
 require 'minitest/spec'
 require 'minitest/autorun'
-
-require 'minitest/unit'
-require 'minitest/reporters'
-Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new]
