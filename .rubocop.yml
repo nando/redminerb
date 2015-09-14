@@ -1,0 +1,9 @@
+# Personal preferences
+Metrics/LineLength:
+  Max: 99
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+Style/TrailingWhitespace:
+  Enabled: false
+Style/RedundantReturn:
+  Enabled: false
