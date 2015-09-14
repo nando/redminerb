@@ -5,8 +5,6 @@ require 'pry'
 require 'minitest/spec'
 require 'minitest/autorun'
 
-require 'climate_control'
-
 require 'minitest/unit'
 require 'minitest/reporters'
 Minitest::Reporters.use! [Minitest::Reporters::DefaultReporter.new]
