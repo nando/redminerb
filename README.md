@@ -13,6 +13,7 @@ It's based on the code and ideas present in Restminer[0]. Gracias Carlos!!!
 Work in progress with RDD[1]: README > Spec > Implementation
 
 [0] http://github.com/theist/restminer
+
 [1] http://maetl.net/talks/readme-driven-development
 
 ## Installation
@@ -41,10 +42,7 @@ To see the current configuration used by Redminerb we have the `config` command:
     URL: http://localhost:3000/
     API_KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-The config is read from ~/.redminerb which uses Ruby one line string assignment to set each value. For example:
-
-    url = 'http://localhost:3000/'
-    api_key = '69b47d74e36a6757bac5d45f8398dd23bfa8f52c'
+Currently the config is read only from the **~/.redminerb.yml** file.
 
 
 ### Users

@@ -1,5 +1,4 @@
 # Copyright 2015 The Cocktail Experience, S.L.
-require 'singleton'
 require 'yaml'
 
 module Redminerb
