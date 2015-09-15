@@ -35,5 +35,9 @@ describe Redminerb do
     it 'creates a Config instance' do
       _(Redminerb.config).must_be_kind_of Redminerb::Config
     end
+
+    it 'creates a Client instance and exposes its connection' do
+      _(Redminerb.connection).must_be_kind_of Faraday::Connection
+    end
   end
 end

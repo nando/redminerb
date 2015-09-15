@@ -2,7 +2,7 @@
 require 'yaml'
 
 module Redminerb
-  # Read user's config from ~/.redminerb
+  # Read user's config from ~/.redminerb.yml
   class Config
     attr_reader :url
     attr_reader :api_key
