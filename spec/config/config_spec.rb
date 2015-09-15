@@ -7,27 +7,48 @@ describe Redminerb::Config do
   end
 
   describe '.new' do
-    subject { Redminerb::Config.new }
+    before do
+      @real_home = ENV['HOME']
+      ENV['HOME'] = SPECS_TMP_DIR
+      FileUtils.rm_rf SPECS_TMP_DIR
+    end
+
+    after do
+      ENV['HOME'] = @real_home
+    end
 
     it 'should fail if called without config file' do
-      real_home = ENV['HOME']
-      spec_home = SPECS_TMP_DIR
-      FileUtils.rm_rf spec_home
-      ENV['HOME'] = spec_home
       proc do
         Redminerb::Config.new
       end.must_raise Errno::ENOENT
-      ENV['HOME'] = real_home
     end
 
-    it 'should load auth params from the config file (~/.redminerb.yml)' do
-      real_home = ENV['HOME']
-      ENV['HOME'] = SPECS_HOME_DIR
+    describe 'with a good config file (e.g. spec/fixtures/home/.redminerb.yml)' do
+      before do
+        @real_home = ENV['HOME']
+        ENV['HOME'] = SPECS_HOME_DIR
+      end
 
-      # read from ./spec/fixtures/home/.redminerb.yml
-      _(subject.url).must_equal 'http://localhost:3000/'
+      after do
+        ENV['HOME'] = @real_home
+      end
 
-      ENV['HOME'] = real_home
+      subject { Redminerb::Config.new }
+
+      it 'should load auth params from ~/.redminerb.yml' do
+        Redminerb.init!
+        _(subject.url).must_equal 'http://localhost:3000/'
+      end
+
+      [:url, :api_key].each do |config_method|
+        describe "##{config_method}" do
+          it 'fails unless Redminerb.init! has been called' do
+            proc do
+              subject.send config_method
+            end.must_raise Redminerb::UninitializedError
+          end
+        end
+      end
     end
   end
 end
