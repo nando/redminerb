@@ -39,8 +39,8 @@ Or install it yourself as:
 To see the current configuration used by Redminerb we have the `config` command:
 
     $ redminerb config
-    URL: http://localhost:3000/
-    API_KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
+    URL:     http://localhost:3000/
+    API-KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
 Currently the config is read only from the **~/.redminerb.yml** file.
 
