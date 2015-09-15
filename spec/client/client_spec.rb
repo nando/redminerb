@@ -17,4 +17,10 @@ describe Redminerb::Client do
       end
     end
   end
+
+  describe '#get_json(path)' do
+    it 'fails unless Redminerb.init! has been called first' do
+      skip 
+    end
+  end
 end

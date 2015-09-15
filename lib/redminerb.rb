@@ -36,7 +36,7 @@ module Redminerb
     @config
   end
 
-  def connection
-    @client.connection
+  def client
+    @client
   end
 end
