@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../lib/redminerb'
+
+Redminerb::CLI.start(ARGV)
