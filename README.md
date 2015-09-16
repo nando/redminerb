@@ -34,6 +34,12 @@ Or install it yourself as:
 
 ## Usage
 
+The URL of your Redmine server and your API key needs to be in your
+`~/.redminerb.yml` in order to connect to its REST API. For example:
+
+    url: http://localhost:3000/
+    api_key: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
+
 ### Configuration (config)
 
 To see the current configuration used by Redminerb we have the `config` command:
@@ -42,14 +48,16 @@ To see the current configuration used by Redminerb we have the `config` command:
     URL:     http://localhost:3000/
     API-KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-Currently the config is read only from the **~/.redminerb.yml** file.
-
+*NOTICE: soon will be possible to specify this values using env. vars and this
+command will have more sense.*
 
 ### Users
 
     $ redminerb users # a.k.a. redminerb users list
 
 That should give you the current users on your Redmine server, one per line.
+
+**IMPORTANT: Our API key needs to have the right permissions in the server.**
 
 ## Development
 

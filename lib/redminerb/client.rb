@@ -39,6 +39,5 @@ module Redminerb
       Redminerb.init_required!
       JSON.parse(@connection.get(path).body)
     end
-
   end
 end
