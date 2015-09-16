@@ -12,12 +12,19 @@ module Redminerb
 
   @initialized = false
 
+  # Module initialization needed before doing anything. It looks ~/.redminerb.yml
+  # to get the authentication info to connect with the Redmine REST API.
+  #
+  # Example:
+  #   >> Reminerb.init!
+  #   => true
   def init!
     @initialized = true
     @config = Redminerb::Config.new
     @client = Redminerb::Client.new(@config)
   end
 
+  # NOTICE: method needed by the build. Clean the module for the next test.
   def end!
     @initialized = false
     @config = nil

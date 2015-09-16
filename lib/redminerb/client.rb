@@ -15,15 +15,30 @@ module Redminerb
       @connection.basic_auth(cfg.api_key, cfg.api_key)
     end
 
-    def get_json(path)
-      Redminerb.init_required!
-      JSON.parse(@connection.get(path).body)
-    end
+    # Get the users of our Redmine as OpenStruct objects.
+    #
+    # Example:
+    #   Redminerb.init!
+    #   Redminerb.client.users.each do |user|
+    #      puts user.firstname
+    #   end
+    #
+    # See lib/reminerb/cli/user.rb code to see other example/s.
 
     def users
       get_json('/users.json')['users'].map do |user|
         OpenStruct.new user
       end
     end
+
+    private
+
+    # Requests the path that receives as param and parses the body of the
+    # response received as JSON.
+    def get_json(path)
+      Redminerb.init_required!
+      JSON.parse(@connection.get(path).body)
+    end
+
   end
 end
