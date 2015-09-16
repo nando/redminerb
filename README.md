@@ -14,7 +14,7 @@ Work in progress with RDD[1]: README > Spec > Implementation
 
 [0] http://github.com/theist/restminer
 
-[1] http://maetl.net/talks/readme-driven-development
+[1] http://tom.preston-werner.com/2010/08/23/readme-driven-development.html
 
 ## Installation
 
