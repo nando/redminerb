@@ -11,5 +11,16 @@ module Redminerb
         puts [user.id, user.login, user.mail].join("\t").green
       end
     end
+
+    desc 'create', 'Creates a user.'
+    option :login, required: true
+    option :password, required: true
+    option :firstname, required: true
+    option :lastname, required: true
+    option :mail, required: true
+    def create
+      Redminerb.init!
+      puts Redminerb.client.create_user(options).green
+    end
   end
 end

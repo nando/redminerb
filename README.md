@@ -53,11 +53,19 @@ command will have more sense.*
 
 ### Users
 
+**IMPORTANT: Be sure that you API key have the right permissions in the server.**
+
+#### List current users
+
     $ redminerb users # a.k.a. redminerb users list
 
 That should give you the current users on your Redmine server, one per line.
 
-**IMPORTANT: Our API key needs to have the right permissions in the server.**
+#### Create new user
+
+    $ redminerb users create --login "wadus" --password "ultrasecret" \
+                             --firstname="Wadux" --lastname="Wallace" \
+                             --mail "wadus@waduxwallace.out"
 
 ## Development
 
