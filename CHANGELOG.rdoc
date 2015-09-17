@@ -6,6 +6,3 @@
 
 * 'redminerb config' to get current config
 * 'redminerb users [list]' to see current users
-
-* 'redminerb config' to get current config
-* 'redminerb users [list]' to see current users
