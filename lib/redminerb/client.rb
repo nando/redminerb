@@ -37,7 +37,10 @@ module Redminerb
     # response received as JSON.
     def get_json(path)
       Redminerb.init_required!
-      JSON.parse(@connection.get(path).body)
+      res = @connection.get(path)
+      JSON.parse(res.body)
+    rescue JSON::ParserError => e
+      raise e, "HTTP status code #{res.status}"
     end
   end
 end
