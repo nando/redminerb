@@ -1,4 +1,11 @@
+== 0.2, released 2015-09-17
+
+* 'redminerb users create' to create a brand new user!
+
 == 0.1, released 2015-09-16
+
+* 'redminerb config' to get current config
+* 'redminerb users [list]' to see current users
 
 * 'redminerb config' to get current config
 * 'redminerb users [list]' to see current users
