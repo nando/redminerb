@@ -51,6 +51,18 @@ module Redminerb
       end
     end
 
+    # Returns a hash with the info of the user's account behind the API key that
+    # is used by the script to access the Redmine's REST API.
+    #
+    # Example (missing required params):
+    #   Redminerb.init!
+    #   me = Redminerb.client.me
+    #   puts me['login'] + ': ' + me['mail']
+
+    def me
+      get_json('/users/current.json')['user']
+    end
+
     private
 
     # Makes a GET request of the given 'path' param and returns the body of the

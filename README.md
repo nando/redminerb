@@ -76,6 +76,16 @@ by semicolons. For example:
 
 Will return only the ID following by the user e-mail.
 
+You can see all the available fields with `redminerb users me`.
+
+#### Show our info in the Redmine server
+
+    $ redminerb users me
+
+Will show the data in the Redmine server associated with the account that has
+the API key used to access the Rest API (hopefully your data :).
+
+
 #### Create new user
 
     $ redminerb users create --login "wadus" --password "ultrasecret" \

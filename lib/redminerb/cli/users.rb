@@ -24,5 +24,13 @@ module Redminerb
       Redminerb.init!
       puts Redminerb.client.create_user(options).green
     end
+
+    desc 'me', 'Shows the info of the owner of the API key'
+    def me
+      Redminerb.init!
+      Redminerb.client.me.each do |field, value|
+        puts "#{field}: ".blue + value.to_s.green
+      end
+    end
   end
 end
