@@ -68,6 +68,14 @@ command will have more sense.*
 
 That should give you the current users on your Redmine server, one per line.
 
+By omission it gives you the ID, the login and the e-mail of the user. You can
+change that using the --fields option, that let you specify others separated
+by semicolons. For example:
+ 
+    $ redminerb users list --fields=id:mail
+
+Will return only the ID following by the user e-mail.
+
 #### Create new user
 
     $ redminerb users create --login "wadus" --password "ultrasecret" \

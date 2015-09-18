@@ -5,10 +5,12 @@ module Redminerb
     default_command :list
 
     desc 'list', 'Shows the current users in our Redmine'
+    option :fields, banner: 'id:login:email'
     def list
       Redminerb.init!
+      fields = options[:fields] || 'id:login:mail'
       Redminerb.client.users.each do |user|
-        puts [user.id, user.login, user.mail].join("\t").green
+        puts fields.split(':').map {|f| user.send(f)}.join("\t").green
       end
     end
 
