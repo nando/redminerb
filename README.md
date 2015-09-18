@@ -34,11 +34,18 @@ Or install it yourself as:
 
 ## Usage
 
-The URL of your Redmine server and your API key needs to be in your
-`~/.redminerb.yml` in order to connect to its REST API. For example:
+The URL and the API key needed to access to your Redmine REST API need to be in
+in your environment or in the `~/.redminerb.yml`.
+
+For example, this `~/.redminerb.yml`:
 
     url: http://localhost:3000/
     api_key: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
+
+Would be the same as having the following in your `.bashrc`:
+
+    export REDMINERB_URL=http://localhost:3000/
+    export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
 ### Configuration (config)
 
