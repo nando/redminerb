@@ -60,13 +60,17 @@ command will have more sense.*
 
 ### Users
 
+Wrapper for part of the [Users resource](http://www.redmine.org/projects/redmine/wiki/Rest_Users) of the Redmine REST API.
+
 **IMPORTANT: Be sure that you API key have the right permissions in the server.**
 
 #### List current users
 
-    $ redminerb users # a.k.a. redminerb users list
+    $ redminerb users # i.e. 'redminerb users list'
 
 That should give you the current users on your Redmine server, one per line.
+
+You can use the `--name` option to list users as described by the *name* filter of the API resource.
 
 By omission it gives you the ID, the login and the e-mail of the user. You can
 change that using the --fields option, that let you specify others separated

@@ -27,8 +27,8 @@ module Redminerb
     #
     # See lib/reminerb/cli/user.rb code to see other example/s.
 
-    def users
-      get_json('/users.json')['users'].map do |user|
+    def users(params)
+      get_json('/users.json', params)['users'].map do |user|
         OpenStruct.new user
       end
     end
@@ -67,9 +67,13 @@ module Redminerb
 
     # Makes a GET request of the given 'path' param and returns the body of the
     # response parsed as JSON.
-    def get_json(path)
+    def get_json(path, params = {})
       Redminerb.init_required!
-      res = @connection.get(path)
+      res = @connection.get do |req|
+        req.url path
+        req.headers['Content-Type'] = 'application/json'
+        req.body = params.to_json if params.any?
+      end
       JSON.parse(res.body)
     rescue JSON::ParserError => e
       raise e, "HTTP status code #{res.status}"
@@ -77,6 +81,7 @@ module Redminerb
 
     # Makes a POST request to 'path' with 'params' in JSON format. 
     def post_json(path, params)
+      Redminerb.init_required!
       @connection.post do |req|
         req.url path
         req.headers['Content-Type'] = 'application/json'

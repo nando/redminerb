@@ -6,10 +6,11 @@ module Redminerb
 
     desc 'list', 'Shows the current users in our Redmine'
     option :fields, banner: 'id:login:email'
+    option :name, banner: '<FILTER>'
     def list
       Redminerb.init!
-      fields = options[:fields] || 'id:login:mail'
-      Redminerb.client.users.each do |user|
+      fields = options.delete(:fields) || 'id:login:mail'
+      Redminerb.client.users(options).each do |user|
         puts fields.split(':').map {|f| user.send(f)}.join("\t").green
       end
     end
