@@ -60,27 +60,33 @@ command will have more sense.*
 
 ### Users
 
-Wrapper for part of the [Users resource](http://www.redmine.org/projects/redmine/wiki/Rest_Users) of the Redmine REST API.
+The **users** command is the wrapper for part of the [Users resource](http://www.redmine.org/projects/redmine/wiki/Rest_Users) of the Redmine REST API.
 
 **IMPORTANT: Be sure that you API key have the right permissions in the server.**
 
 #### List current users
 
+**List** is the default subcommand of the *users* command:
+
     $ redminerb users # i.e. 'redminerb users list'
 
 That should give you the current users on your Redmine server, one per line.
 
-You can use the `--name` option to list users as described by the *name* filter of the API resource.
+You can use the `--name` option to list users as described by the *name* filter of the API resource. The `-q` and `--query` are aliases for this option. For example:
 
-By omission it gives you the ID, the login and the e-mail of the user. You can
-change that using the --fields option, that let you specify others separated
+    $ redminerb users -q red # i.e. 'redminerb users list --name=red'
+
+Will show us the users which login, first name, last name or email contains the 'red' word.
+
+By omission *users list* gives you the ID, the login and the e-mail of the user. You can
+change that using the *--fields (-f)* option, that let you specify others separated
 by semicolons. For example:
  
-    $ redminerb users list --fields=id:mail
+    $ redminerb users -f id:mail
 
-Will return only the ID following by the user e-mail.
+Will return only the ID following by the user's email.
 
-You can see all the available fields with `redminerb users me`.
+You can see **all the fields available** with `redminerb users me`.
 
 #### Show our info in the Redmine server
 
@@ -92,9 +98,24 @@ the API key used to access the Rest API (hopefully your data :).
 
 #### Create new user
 
-    $ redminerb users create --login "wadus" --password "ultrasecret" \
-                             --firstname="Wadux" --lastname="Wallace" \
+To create a new user we should use the *create* subcommand:
+
+    $ redminerb users create --login wadus --password="ultrasecret" \
+                             --firstname="Wadux" --lastname Wallace \
                              --mail "wadus@waduxwallace.out"
+
+The options have the following aliases (extracted from `redminerb users help create`):
+
+    l, --login=LOGIN           
+    p, --password=PASSWORD     
+    fn, --firstname=FIRSTNAME  
+    ln, --lastname=LASTNAME    
+    m, --mail=MAIL
+
+So, the previous command is the same as the following:
+
+    $ redminerb users create -l wadus -p ultrasecret -fn Wadux -ln Wallace \
+                             -m wadus@waduxwallace.out
 
 ## Development
 

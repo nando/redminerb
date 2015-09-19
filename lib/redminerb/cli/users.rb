@@ -5,8 +5,8 @@ module Redminerb
     default_command :list
 
     desc 'list', 'Shows the current users in our Redmine'
-    option :fields, banner: 'id:login:email'
-    option :name, banner: '<FILTER>'
+    option :fields, aliases: :f, banner: 'id:login:email'
+    option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
     def list
       Redminerb.init!
       fields = options.delete(:fields) || 'id:login:mail'
@@ -16,11 +16,11 @@ module Redminerb
     end
 
     desc 'create', 'Creates a user.'
-    option :login, required: true
-    option :password, required: true
-    option :firstname, required: true
-    option :lastname, required: true
-    option :mail, required: true
+    option :login,     aliases: :l,  required: true
+    option :password,  aliases: :p,  required: true
+    option :firstname, aliases: :fn, required: true
+    option :lastname,  aliases: :ln, required: true
+    option :mail,      aliases: :m,  required: true
     def create
       Redminerb.init!
       puts Redminerb.client.create_user(options).green
