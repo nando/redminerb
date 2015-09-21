@@ -19,6 +19,6 @@ module Redminerb
 
     # The subcommad's classes are defined in lib/redminerb/cli
     desc 'users [list]', "Manage Redmine's users"
-    subcommand 'users', Users
+    subcommand 'users', Cli::Users
   end
 end

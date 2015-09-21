@@ -3,6 +3,7 @@ require_relative 'redminerb/version'
 require_relative 'redminerb/config'
 require_relative 'redminerb/client'
 require_relative 'redminerb/cli'
+require_relative 'redminerb/users'
 
 # Main module 
 module Redminerb

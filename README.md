@@ -34,8 +34,9 @@ Or install it yourself as:
 
 ## Usage
 
-The URL and the API key needed to access to your Redmine REST API need to be in
-in your environment or in the `~/.redminerb.yml`.
+The URL and the API key of your Redmine REST API must be in your environment
+using *REDMINERB_URL* and *REDMINERB_API_KEY*, or in the `~/.redminerb.yml` as values
+of the *url* and *api_key* keys.
 
 For example, this `~/.redminerb.yml`:
 
@@ -54,9 +55,6 @@ To see the current configuration used by Redminerb we have the `config` command:
     $ redminerb config
     URL:     http://localhost:3000/
     API-KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
-
-*NOTICE: soon will be possible to specify this values using env. vars and this
-command will have more sense.*
 
 ### Users
 
