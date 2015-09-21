@@ -67,7 +67,7 @@ To see the current configuration used by Redminerb we have the `config` command:
 
 The **users** command is the wrapper for part of the [Users resource](http://www.redmine.org/projects/redmine/wiki/Rest_Users) of the Redmine REST API.
 
-**IMPORTANT: Be sure that you API key have the right permissions in the server.**
+**IMPORTANT: Be sure that your API key's user have the right permissions in the server.**
 
 #### List current users
 
@@ -121,6 +121,10 @@ So, the previous command is the same as the following:
 
     $ redminerb users create -l wadus -p ultrasecret -fn Wadux -ln Wallace \
                              -m wadus@waduxwallace.out
+
+#### List issues
+
+    $ redminerb issues # i.e. 'redminerb issues list
 
 ## Development
 
