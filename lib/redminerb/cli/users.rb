@@ -8,6 +8,8 @@ module Redminerb
       desc 'list', 'Shows the current users in our Redmine'
       option :fields, aliases: :f, banner: 'id:login:email'
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
+      option :offset, aliases: :o
+      option :limit, aliases: :l
       def list
         Redminerb.init!
         fields = options.delete(:fields) || 'id:login:mail'

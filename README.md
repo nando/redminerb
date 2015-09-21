@@ -48,6 +48,13 @@ Would be the same as having the following in your `.bashrc`:
     export REDMINERB_URL=http://localhost:3000/
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
+GET request on a collection ressources give us the results as indicated by the
+[Redmine pagination documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api#Collection-resources-and-pagination). You can use the *--limit (-l)* and *--offset (-o)* options.
+
+For example, you can see the third user of your Redmine with:
+
+    $ redminerb users -o 3 -l 1
+
 ### Configuration (config)
 
 To see the current configuration used by Redminerb we have the `config` command:
