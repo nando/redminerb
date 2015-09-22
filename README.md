@@ -122,6 +122,10 @@ So, the previous command is the same as the following:
     $ redminerb users create -l wadus -p ultrasecret -fn Wadux -ln Wallace \
                              -m wadus@waduxwallace.out
 
+### Issues
+
+The **issues** command is the wrapper for part of the [Issues resource](http://www.redmine.org/projects/redmine/wiki/Rest_Issues) of the Redmine REST API.
+
 #### List issues
 
     $ redminerb issues list
