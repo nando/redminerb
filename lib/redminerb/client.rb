@@ -1,7 +1,6 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
 require 'faraday'
 require 'json'
-require 'ostruct'
 
 module Redminerb
   # HTTP client to communicate w/ the Redmine server.

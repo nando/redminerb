@@ -1,10 +1,10 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
+require 'terminfo'
 require_relative 'redminerb/version'
 require_relative 'redminerb/config'
 require_relative 'redminerb/client'
 require_relative 'redminerb/cli'
-require_relative 'redminerb/users'
-require_relative 'redminerb/issues'
+require_relative 'redminerb/template'
 
 # Main module 
 module Redminerb
@@ -47,5 +47,9 @@ module Redminerb
 
   def client
     @client
+  end
+
+  def separator
+    @separator ||= ('-' * TermInfo.screen_columns).green
   end
 end

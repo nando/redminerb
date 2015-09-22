@@ -1,3 +1,8 @@
+== 0.3, released 2015-09-22
+
+* 'redminerb issues [show] <number>' to see an issue's info
+* 'redminerb issues list' to see open issues
+
 == 0.2, released 2015-09-17
 
 * 'redminerb users create' to create a brand new user!

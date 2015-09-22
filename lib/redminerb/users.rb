@@ -1,4 +1,6 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
+require 'ostruct'
+
 module Redminerb
   # Users resource wrapper
   class Users

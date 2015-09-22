@@ -1,4 +1,6 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
+require_relative '../users'
+
 module Redminerb
   module Cli
     # 'users' Thor subcommand definition

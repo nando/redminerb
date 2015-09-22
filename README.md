@@ -124,7 +124,21 @@ So, the previous command is the same as the following:
 
 #### List issues
 
-    $ redminerb issues # i.e. 'redminerb issues list
+    $ redminerb issues list
+
+#### Show an issue
+
+Shows the info of an issue with a number or id.
+
+    $ redminerb issues [show] <number>
+
+For example, to see the info of the issue #12532 we'd launch:
+
+    $ redminerb issues show 12539
+
+*show* is the default subcommand, so the following order has the same output as the following:
+
+    $ redminerb issues 12539
 
 ## Development
 
