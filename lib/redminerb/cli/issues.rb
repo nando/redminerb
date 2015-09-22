@@ -1,5 +1,4 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
-require 'erb'
 require_relative '../issues'
 
 module Redminerb
@@ -21,9 +20,7 @@ module Redminerb
       desc 'show <number>', 'Shows the data of the issue which id match with #<number>'
       def show(issue_id)
         Redminerb.init!
-        issue = Redminerb::Issues.read(issue_id)
-        template = Redminerb::Template.read(:issue)
-        puts ERB.new(template).result(binding)
+        puts Redminerb::Template.render(:issue, Redminerb::Issues.read(issue_id))
       end
     end
   end
