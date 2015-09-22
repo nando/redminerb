@@ -1,3 +1,7 @@
+== 0.4, released 2015-09-22
+
+* 'redminerb users show <id>' to see a user's info.
+
 == 0.3, released 2015-09-22
 
 * 'redminerb issues [show] <number>' to see an issue's info

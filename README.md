@@ -100,6 +100,11 @@ You can see **all the fields available** with `redminerb users me`.
 Will show the data in the Redmine server associated with the account that has
 the API key used to access the Rest API (hopefully your data :).
 
+#### Show user's data
+
+    $ redminerb users show <id>
+
+Will give us the info associated with the user with the given *id*.
 
 #### Create new user
 

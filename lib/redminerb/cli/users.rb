@@ -7,7 +7,7 @@ module Redminerb
     class Users < Thor
       default_command :list
   
-      desc 'list', 'Shows the current users in our Redmine'
+      desc 'list', 'Shows the current users in our Redmine.'
       option :fields, aliases: :f, banner: 'id:login:email'
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
@@ -31,12 +31,18 @@ module Redminerb
         puts Redminerb::Users.create(options).green
       end
   
-      desc 'me', 'Shows the info of the owner of the API key'
+      desc 'me', 'Shows the info of the owner of the API key.'
       def me
         Redminerb.init!
         Redminerb::Users.me.each do |field, value|
           puts "#{field}: ".blue + value.to_s.green
         end
+      end
+
+      desc 'show <id>', 'Shows the info of the user with id <id>.'
+      def show(user_id)
+        Redminerb.init!
+        puts Redminerb::Template.render(:user, Redminerb::Users.read(user_id))
       end
     end
   end

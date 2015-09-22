@@ -50,6 +50,10 @@ module Redminerb
       def me
         Redminerb.client.get_json('/users/current.json')['user']
       end
+
+      def read(id)
+        OpenStruct.new Redminerb.client.get_json("/users/#{id}.json")['user']
+      end
     end
   end
 end
