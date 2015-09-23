@@ -20,11 +20,7 @@ module Redminerb
     # response parsed as JSON.
     def get_json(path, params = {})
       Redminerb.init_required!
-      res = @connection.get do |req|
-        req.url path
-        req.headers['Content-Type'] = 'application/json'
-        req.body = params.to_json if params.any?
-      end
+      res = _get(path, params)
       if res.status == 404
         fail Redminerb::NotFoundError, path
       else
@@ -44,7 +40,7 @@ module Redminerb
       end
     end
 
-    # It raises an exception giving the validation messages for 422 responses
+    # It raises an exception giving the validation messages for 422 responses.
     def self.raise_error!(res)
       if res.status == 422
         begin
@@ -55,6 +51,16 @@ module Redminerb
         fail UnprocessableEntity, errors.join("\n")
       else
         fail StandardError, "ERROR (status code #{res.status})"
+      end
+    end
+
+    private
+
+    def _get(path, params)
+      @connection.get do |req|
+        req.url path
+        req.headers['Content-Type'] = 'application/json'
+        req.body = params.to_json if params.any?
       end
     end
   end
