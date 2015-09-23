@@ -2,8 +2,10 @@
 require 'erb'
 
 module Redminerb
-  # Class to read Redminerb's ERB templates
+  # Class to render Redminerb's ERB templates
   class Template
+    TEMPLATES_DIR = '.redminerb/templates'
+
     class << self
       # Renders the template +name+ using +resource+ assigned to a local
       # variable with that same name in its binding (i.e. the template will
@@ -44,7 +46,23 @@ module Redminerb
       end
 
       def _filepath(name)
+        _localfile(name) || _homefile(name) || _gemfile(name)
+      end
+
+      def _localfile(name)
+        _filepath_or_nil "#{TEMPLATES_DIR}/#{name}.erb"
+      end
+
+      def _homefile(name)
+        _filepath_or_nil "#{ENV['HOME']}/#{TEMPLATES_DIR}/#{name}.erb"
+      end
+
+      def _gemfile(name)
         File.join(File.dirname(__FILE__)[0..-15], 'templates', "#{name}.erb")
+      end
+
+      def _filepath_or_nil(filepath)
+        filepath if File.exist?(filepath)
       end
     end
   end

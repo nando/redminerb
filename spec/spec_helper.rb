@@ -7,5 +7,6 @@ require 'minitest/autorun'
 
 require 'climate_control'
 
-SPECS_TMP_DIR  = './tmp/specs'
-SPECS_HOME_DIR = './spec/fixtures/home'
+SPECS_TMP_DIR      = './tmp/specs'
+SPECS_FIXTURES_DIR = './spec/fixtures'
+SPECS_HOME_DIR     = SPECS_FIXTURES_DIR + '/home'

@@ -34,26 +34,34 @@ Or install it yourself as:
 
 ## Usage
 
-The URL and the API key of your Redmine REST API must be in your environment
-using *REDMINERB_URL* and *REDMINERB_API_KEY*, or in the `~/.redminerb.yml` as values
-of the *url* and *api_key* keys.
+In order to use `redminerb` the URL and the API key of your Redmine REST API must be available in one of the following places:
+
+
+1. **In your environment**: using *REDMINERB_URL* and *REDMINERB_API_KEY* env. vars.
+2. **In `~/.redminerb.yml`**: as values of *url* and *api_key*.
 
 For example, this `~/.redminerb.yml`:
 
     url: http://localhost:3000/
     api_key: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-Would be the same as having the following in your `.bashrc`:
+Would be the same as having the following in your environment (declared in `.bashrc`, for example):
 
     export REDMINERB_URL=http://localhost:3000/
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-GET request on a collection ressources give us the results as indicated by the
-[Redmine pagination documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api#Collection-resources-and-pagination). You can use the *--limit (-l)* and *--offset (-o)* options.
+If both present environment variables have priority.
 
-For example, you can see the third user of your Redmine with:
+Collections of resources will give us the results as indicated by the
+[Redmine pagination documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api#Collection-resources-and-pagination) and the *--limit (-l)* and *--offset (-o)* options can be used.
+
+For example, you could see the third user of your Redmine with:
 
     $ redminerb users -o 3 -l 1
+
+The output of particular resources can be customized creating the corresponding `.erb` file in the *.redminerb/templates* directory (the default templates could be found in the *templates* directory).
+
+The *.redminerb* directory will be search in your current directory first, and then in your home directory.
 
 ### Configuration (config)
 

@@ -1,17 +1,21 @@
+== 0.5, released 2015-09-23
+
+* Local or home +.redminerb/templates+ directory for resource output customizations
+
 == 0.4, released 2015-09-22
 
-* 'redminerb users show <id>' to see a user's info.
+* +redminerb users show <id>+ to see a user's info
 
 == 0.3, released 2015-09-22
 
-* 'redminerb issues [show] <number>' to see an issue's info
-* 'redminerb issues list' to see open issues
+* +redminerb issues [show] <number>+ to see an issue's info
+* +redminerb issues list+ to see open issues
 
 == 0.2, released 2015-09-17
 
-* 'redminerb users create' to create a brand new user!
+* +redminerb users create+ to create a brand new user!
 
 == 0.1, released 2015-09-16
 
-* 'redminerb config' to get current config
-* 'redminerb users [list]' to see current users
+* +redminerb config+ to get current config
+* +redminerb users [list]+ to see current users
