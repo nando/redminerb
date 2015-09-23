@@ -25,7 +25,11 @@ module Redminerb
         req.headers['Content-Type'] = 'application/json'
         req.body = params.to_json if params.any?
       end
-      JSON.parse(res.body)
+      if res.status == 404
+        fail Redminerb::NotFoundError, path
+      else
+        JSON.parse(res.body)
+      end
     rescue JSON::ParserError => e
       raise e, "HTTP status code #{res.status}"
     end

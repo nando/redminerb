@@ -9,6 +9,7 @@ require_relative 'redminerb/template'
 # Main module 
 module Redminerb
   class UninitializedError < StandardError; end
+  class NotFoundError < StandardError; end
 
   module_function
 
