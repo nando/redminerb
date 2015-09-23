@@ -45,7 +45,7 @@ For example, this `~/.redminerb.yml`:
     url: http://localhost:3000/
     api_key: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-Would be the same as having the following in your environment (declared in `.bashrc`, for example):
+Would be the same as having the following in your environment (declared in `~/.bashrc`, for example):
 
     export REDMINERB_URL=http://localhost:3000/
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
