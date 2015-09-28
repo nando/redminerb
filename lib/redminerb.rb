@@ -51,6 +51,6 @@ module Redminerb
   end
 
   def separator
-    @separator ||= ('-' * TermInfo.screen_columns).green
+    @separator ||= ('─' * TermInfo.screen_columns).green
   end
 end
