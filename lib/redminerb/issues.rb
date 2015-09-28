@@ -1,5 +1,5 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
-require 'ostruct'
+require 'recursive-open-struct'
 
 module Redminerb
   # Issues resource wrapper
@@ -28,7 +28,7 @@ module Redminerb
       #   puts "#{issue.id}: #{issue.subject}"
       #
       def read(id)
-        OpenStruct.new Redminerb.client.get_json("/issues/#{id}.json")['issue']
+        RecursiveOpenStruct.new Redminerb.client.get_json("/issues/#{id}.json")['issue']
       end
     end
   end
