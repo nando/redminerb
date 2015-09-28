@@ -1,7 +1,7 @@
 <%= Redminerb.separator %>
   <%= user.login.upcase.green %>
 <%= Redminerb.separator %>
-   * Id:        <%= user.id.to_s.blue %>
+   <%= "Id: #{user.id}".blue %>
    * Firstname: <%= user.firstname.red %>
    * Lastname:  <%= user.lastname.red %>
    * Login:     <%= user.login.red %>

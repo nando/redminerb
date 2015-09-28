@@ -1,0 +1,13 @@
+{
+  "user": {
+    "id": 217,
+    "login": "antonio.sanchez",
+    "firstname": "Antonio",
+    "lastname": "Sánchez",
+    "mail": "antonio.sanchez@example.com",
+    "created_on": "2014-06-23T11:15:58Z",
+    "last_login_on": "2015-07-20T10:22:07Z",
+    "api_key": "1d446df051b7b07104a437e0c7f5ff211eb4fdd9",
+    "status": 1
+  }
+}
