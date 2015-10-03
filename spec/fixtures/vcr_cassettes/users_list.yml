@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/users.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"6e33ecb31e71b4690771c88578859ca2"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 54f2344d75cc66b2f04760d63f68e86d
+      X-Runtime:
+      - '0.074222'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Sat, 03 Oct 2015 11:54:48 GMT
+      Content-Length:
+      - '235'
+      Connection:
+      - Keep-Alive
+      Set-Cookie:
+      - _redmine_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTk2N2FmNmJmZTQ5ZGNjYzg5ZWM4NzY5NTViM2IyYjgxBjsAVEkiFXVzZXJzX2luZGV4X3NvcnQGOwBGSSIKbG9naW4GOwBU--9b92377effecb92b983feec5b1510cf0a108fb72;
+        path=/; HttpOnly
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":14,"login":"nando","firstname":"Fernando","lastname":"Garcia","mail":"fernando.garcia@the-cocktail.com","created_on":"2008-10-09T15:55:11Z","last_login_on":"2015-09-21T10:01:35Z"}],"total_count":1,"offset":0,"limit":25}'
+    http_version: 
+  recorded_at: Sat, 03 Oct 2015 11:54:48 GMT
+recorded_with: VCR 2.9.3

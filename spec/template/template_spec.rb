@@ -34,6 +34,8 @@ describe Redminerb::Template do
     end
 
     describe 'gem template' do
+      include Redminerb::Spec
+
       before do
         ENV['HOME'] = SPECS_TMP_DIR
         FileUtils.rm_rf SPECS_TMP_DIR
