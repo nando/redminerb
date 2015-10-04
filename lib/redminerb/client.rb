@@ -7,8 +7,6 @@ module Redminerb
   class Client
     class UnprocessableEntity < StandardError; end
 
-    attr_reader :connection
-
     def initialize(cfg)
       @connection = Faraday.new(url: cfg.url) do |f|
         f.adapter Faraday.default_adapter

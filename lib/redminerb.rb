@@ -43,10 +43,12 @@ module Redminerb
   end
 
   def config
+    init_required!
     @config
   end
 
   def client
+    init_required!
     @client
   end
 
