@@ -36,7 +36,6 @@ Or install it yourself as:
 
 In order to use `redminerb` the URL and the API key of your Redmine REST API must be available in one of the following places:
 
-
 1. **In your environment**: using *REDMINERB_URL* and *REDMINERB_API_KEY* env. vars.
 2. **In `~/.redminerb.yml`**: as values of *url* and *api_key*.
 
@@ -51,6 +50,8 @@ Would be the same as having the following in your environment (declared in `~/.b
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
 If both present environment variables have priority.
+
+As a general rule, the `list` subcomand is the one assumed when omitted, but if a number is given instead of a subcomand, then the `show` subcommand will be call using that number as param. For example `redminerb users 1` will show us the info of the first user of our Redmine.
 
 Collections of resources will give us the results as indicated by the
 [Redmine pagination documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api#Collection-resources-and-pagination) and the *--limit (-l)* and *--offset (-o)* options can be used.
@@ -110,7 +111,7 @@ the API key used to access the Rest API (hopefully your data :).
 
 #### Show user's data
 
-    $ redminerb users show <id>
+    $ redminerb users [show] <id> # aka "redminerb users <id>"
 
 Will give us the info associated with the user with the given *id*.
 
@@ -141,7 +142,7 @@ The **issues** command is the wrapper for part of the [Issues resource](http://w
 
 #### List issues
 
-    $ redminerb issues list
+    $ redminerb issues list # aka "redminerb issues"
 
 #### Show an issue
 
@@ -150,10 +151,6 @@ Shows the info of an issue with a number or id.
     $ redminerb issues [show] <number>
 
 For example, to see the info of the issue #12532 we'd launch:
-
-    $ redminerb issues show 12539
-
-*show* is the default subcommand, so the following order has the same output as the following:
 
     $ redminerb issues 12539
 

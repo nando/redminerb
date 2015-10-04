@@ -5,19 +5,23 @@ module Redminerb
   module Cli
     # Thor's 'issues' subcommand definition
     class Issues < Thor
-      default_command :show
+      default_command :list
   
       desc 'list', 'Shows open issues in our Redmine'
       option :offset, aliases: :o
       option :limit, aliases: :l
-      def list
-        Redminerb.init!
-        Redminerb::Issues.list(options).each do |issue|
-          puts "[#{issue.id}] ".blue + issue.subject.green
+      def list(issue_id = nil)
+        if issue_id
+          show(issue_id)
+        else
+          Redminerb.init!
+          Redminerb::Issues.list(options).each do |issue|
+            puts "[#{issue.id}] ".blue + issue.subject.green
+          end
         end
       end
 
-      desc 'show <number>', 'Shows the data of the issue which id match with #<number>'
+      desc 'show <number>', 'Shows an issue (SHORTCUT: redminerb issues <number>)'
       def show(issue_id)
         Redminerb.init!
         puts Redminerb::Template.render(:issue, Redminerb::Issues.read(issue_id))

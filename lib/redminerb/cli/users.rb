@@ -12,11 +12,15 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
-      def list
-        Redminerb.init!
-        fields = options.delete(:fields) || 'id:login:mail'
-        Redminerb::Users.list(options).each do |user|
-          puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+      def list(user_id = nil)
+        if user_id
+          show user_id
+        else
+          Redminerb.init!
+          fields = options.delete(:fields) || 'id:login:mail'
+          Redminerb::Users.list(options).each do |user|
+            puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+          end
         end
       end
   
@@ -39,7 +43,7 @@ module Redminerb
         end
       end
 
-      desc 'show <id>', 'Shows the info of the user with id <id>.'
+      desc 'show <id>', 'Shows a user (SHORTCUT redminerb users <id>).'
       def show(user_id)
         Redminerb.init!
         puts Redminerb::Template.render(:user, Redminerb::Users.read(user_id))
