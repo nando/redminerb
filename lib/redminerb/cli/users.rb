@@ -43,10 +43,11 @@ module Redminerb
         end
       end
 
-      desc 'show <id>', 'Shows a user (SHORTCUT redminerb users <id>).'
+      desc 'show <id>', 'Shows a user (SHORTCUT: "redminerb users <id>").'
+      option :template, aliases: :t
       def show(user_id)
         Redminerb.init!
-        puts Redminerb::Template.render(:user, Redminerb::Users.read(user_id))
+        puts Redminerb::Template.render(:user, Redminerb::Users.read(user_id), options)
       end
     end
   end

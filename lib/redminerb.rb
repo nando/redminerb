@@ -52,7 +52,36 @@ module Redminerb
     @client
   end
 
+  # ASCII old-school box's part output functions
   def separator
-    @separator ||= ('─' * TermInfo.screen_columns).green
+    @separator ||= '─' * TermInfo.screen_columns
+  end
+  
+  def top
+    '┌' + separator[0..-3] + '┐'
+  end
+  
+  def middle
+    '├' + separator[0..-3] + '┤'
+  end
+  
+  def bottom
+    '└' + separator[0..-3] + '┘'
+  end
+  
+  def max_length
+    TermInfo.screen_columns - 4
+  end
+  
+  def line(string)
+    if string.size > max_length
+      "│ #{string[0..(max_length - 1)]} │\n#{line(string[max_length..-1])}" if string
+    else
+      "│ #{string}#{extra_espaces_for(string)} │"
+    end
+  end
+  
+  def extra_espaces_for(string)
+    ' ' * (max_length - string.size)
   end
 end

@@ -31,10 +31,10 @@ module Redminerb
       #   Redminerb::Template.render(:issue, {subject: 'Fixme!'})
       #
 
-      def render(name, resource)
+      def render(name, resource, options = {})
         b = binding
         b.local_variable_set(name, resource)
-        template = _read_template(name)
+        template = _read_template(options['template'] || name)
         ERB.new(template).result(b)
       end
 

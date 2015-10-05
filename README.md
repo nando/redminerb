@@ -49,20 +49,55 @@ Would be the same as having the following in your environment (declared in `~/.b
     export REDMINERB_URL=http://localhost:3000/
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-If both present environment variables have priority.
+If both present **environment variables have priority**.
 
-As a general rule, the `list` subcomand is the one assumed when omitted, but if a number is given instead of a subcomand, then the `show` subcommand will be call using that number as param. For example `redminerb users 1` will show us the info of the first user of our Redmine.
+As a general rule, the `list` subcomand is the one assumed when omitted, but if a number is given instead of a subcomand, then the `show` subcommand will be call using that number as param. For example `redminerb users 1` will show us the info of the first user of our Redmine. Notice that also the singular can be used for the command, which is nice for these cases (i.e. `redminerb user 1`, thanks Thor!)
+
+### Pagination
 
 Collections of resources will give us the results as indicated by the
 [Redmine pagination documentation](http://www.redmine.org/projects/redmine/wiki/Rest_api#Collection-resources-and-pagination) and the *--limit (-l)* and *--offset (-o)* options can be used.
 
 For example, you could see the third user of your Redmine with:
 
+    $ redminerb users list --offset 3 --limit 1
+
+That is the same than asking for:
+
     $ redminerb users -o 3 -l 1
 
-The output of particular resources can be customized creating the corresponding `.erb` file in the *.redminerb/templates* directory (the default templates could be found in the *templates* directory).
+Because `list` is the default subcommand for the `users` command.
+
+### Custom ERB templates
+
+The output of **a single resource** obtained with **the `show` subcommand can be customized creating the corresponding `.erb` file** in the *.redminerb/templates* directory. In the template we can access to the resource using its generic name, e.g. `user` or `issue`.
+
+The default templates could be found in the *templates* directory.
+
+For example, to customize the output of an issue, we could write the following content in the `.redminerb/issue.erb`:
+
+    Number: <%= issue.id %>
+    Title: <%= issue.subject %>
 
 The *.redminerb* directory will be search in your current directory first, and then in your home directory.
+
+We can also create other templates and use them through **the `--template` option**. For example:
+
+    $ redminerb users show 34 --template user_in_a_box
+
+Will use the file `.redminerb/user_in_a_box.erb` as template, whose content could be the following:
+
+    <%= Redminerb.top %>
+    <%= Redminerb.line user.login %>
+    <%= Redminerb.bottom %>
+
+As you can see Redminerb give us also some functions to draw its output using old-school boxes. These functions are:
+
+* **Redminerb.top**: shows the top of the box (i.e. `┌──────┐`).
+* **Redminerb.middle**: shows a line in the middle of the box (i.e. `├──────┤`).
+* **Redminerb.bottom**: shows the bottom of the box (i.e. `└──────┘`).
+* **Redminerb.line** *string*: content into the box (i.e. `│ Example │`).
+* **Redminerb.separator**: a line from left to right (like *middle* wo/ box borders).
 
 ### Configuration (config)
 

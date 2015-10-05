@@ -1,12 +1,12 @@
-<%= Redminerb.separator %>
+<%= Redminerb.separator.green %>
 <%= "[#{issue.tracker.name}]".blue + "[#{issue.project.name}:##{issue.id}]".green %> <%= issue.subject %>
-<%= Redminerb.separator %>
+<%= Redminerb.separator.green %>
 Author:      <%= issue.author.name.red %>
 Assigned to: <%= issue.assigned_to.name.red %>
 Status:      <%= issue.status.name.red %>
 Priority:    <%= issue.priority.name.red %>
-<%= Redminerb.separator %>
+<%= Redminerb.separator.green %>
 <%= issue.description %>
-<%= Redminerb.separator %>
+<%= Redminerb.separator.green %>
 <%= Redminerb.config.url + "issues/#{issue.id}" %>
-<%= Redminerb.separator %>
+<%= Redminerb.separator.green %>

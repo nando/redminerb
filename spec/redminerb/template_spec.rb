@@ -42,7 +42,7 @@ describe Redminerb::Template do
       end
 
       let(:user) { OpenStruct.new(json_from_fixture('user')['user']) }
-      let(:user_title) { "Id: #{user.id}" }
+      let(:user_title) { "Id: ##{user.id}" }
       let(:issue) { RecursiveOpenStruct.new(json_from_fixture('issue')['issue']) }
       let(:issue_title) { "Redminerb 2015:##{issue.id}" }
 

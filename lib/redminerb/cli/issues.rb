@@ -21,10 +21,11 @@ module Redminerb
         end
       end
 
-      desc 'show <number>', 'Shows an issue (SHORTCUT: redminerb issues <number>)'
+      desc 'show <number>', 'Shows an issue (SHORTCUT: "redminerb issues <number>")'
+      option :template, aliases: :t
       def show(issue_id)
         Redminerb.init!
-        puts Redminerb::Template.render(:issue, Redminerb::Issues.read(issue_id))
+        puts Redminerb::Template.render(:issue, Redminerb::Issues.read(issue_id), options)
       end
     end
   end

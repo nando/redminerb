@@ -1,3 +1,11 @@
+= CHANGELOG
+== 0.7, released 2015-10-05
+
+* Show subcommand's +--template+ option for user/issue command to indicate the .erb template to render.
+* Optimized & unified the default subcommand (list/show).
+* ASCII box chars "helpers" added to the Redminerb module singleton functions.
+* Two alternative views (*issue_boxie.erb* and *user_in_a_box.erb*).
+
 == 0.6, released 2015-09-28
 
 * +templates/issue.erb+ uses a recursive OStruct for internal objects -letting us for example say +issue.author.name+ instead of +issue.author['name']+
