@@ -74,12 +74,12 @@ The output of **a single resource** obtained with **the `show` subcommand can be
 
 The default templates could be found in the *templates* directory.
 
-For example, to customize the output of an issue, we could write the following content in the `.redminerb/issue.erb`:
+For example, to customize the output of an issue, we write the following content in the `.redminerb/issue.erb` file:
 
     Number: <%= issue.id %>
     Title: <%= issue.subject %>
 
-The *.redminerb* directory will be search in your current directory first, and then in your home directory.
+The *.redminerb* directory will be search **in the current directory first**, and then in **your home directory**.
 
 We can also create other templates and use them through **the `--template` option**. For example:
 
@@ -91,13 +91,21 @@ Will use the file `.redminerb/user_in_a_box.erb` as template, whose content coul
     <%= Redminerb.line user.login %>
     <%= Redminerb.bottom %>
 
-As you can see Redminerb give us also some functions to draw its output using old-school boxes. These functions are:
+That would give us an output similar to this:
+
+    ┌────────────────────────────────────┐
+    │ roger.williams                     │
+    └────────────────────────────────────┘
+
+As you can see Redminerb give us also **some functions to draw** its output using old-school boxes. These functions are:
 
 * **Redminerb.top**: shows the top of the box (i.e. `┌──────┐`).
 * **Redminerb.middle**: shows a line in the middle of the box (i.e. `├──────┤`).
 * **Redminerb.bottom**: shows the bottom of the box (i.e. `└──────┘`).
 * **Redminerb.line** *string*: content into the box (i.e. `│ Example │`).
 * **Redminerb.separator**: a line from left to right (like *middle* wo/ box borders).
+
+Have fun with them!
 
 ### Configuration (config)
 
@@ -135,18 +143,18 @@ by semicolons. For example:
 
 Will return only the ID following by the user's email.
 
-You can see **all the fields available** with `redminerb users me`.
+You can see **all the fields available** with `redminerb user me`.
 
 #### Show our info in the Redmine server
 
-    $ redminerb users me
+    $ redminerb user me
 
 Will show the data in the Redmine server associated with the account that has
 the API key used to access the Rest API (hopefully your data :).
 
 #### Show user's data
 
-    $ redminerb users [show] <id> # aka "redminerb users <id>"
+    $ redminerb user [show] <id>
 
 Will give us the info associated with the user with the given *id*.
 
@@ -177,17 +185,17 @@ The **issues** command is the wrapper for part of the [Issues resource](http://w
 
 #### List issues
 
-    $ redminerb issues list # aka "redminerb issues"
+    $ redminerb issues [list]
 
 #### Show an issue
 
 Shows the info of an issue with a number or id.
 
-    $ redminerb issues [show] <number>
+    $ redminerb issue [show] <number>
 
-For example, to see the info of the issue #12532 we'd launch:
+For example, to see the info of the issue #12539 we'd launch:
 
-    $ redminerb issues 12539
+    $ redminerb issue 12539
 
 ## Development
 
