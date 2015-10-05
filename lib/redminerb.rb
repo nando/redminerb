@@ -74,14 +74,15 @@ module Redminerb
   end
   
   def line(string)
-    if string.size > max_length
+    uncolorized = string.uncolorize
+    if uncolorized.size > max_length
       "│ #{string[0..(max_length - 1)]} │\n#{line(string[max_length..-1])}" if string
     else
-      "│ #{string}#{extra_espaces_for(string)} │"
+      "│ #{string}#{fill_with_spaces(uncolorized)} │"
     end
   end
-  
-  def extra_espaces_for(string)
+
+  def fill_with_spaces(string)
     ' ' * (max_length - string.size)
   end
 end
