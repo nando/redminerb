@@ -16,7 +16,7 @@ module Redminerb
       def list(params)
         projects = Redminerb.client.get_json('/projects.json', params)['projects']
         if (name = params.delete(:name))
-          projects = projects.select {|p| p.name =~ /#{name}/i}
+          projects = projects.select {|project| project['name'] =~ /#{name}/i}
         end
         projects.map do |project|
           OpenStruct.new project

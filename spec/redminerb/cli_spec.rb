@@ -10,24 +10,54 @@ describe Redminerb::CLI do
 
   after do
     ENV['HOME'] = @real_home
+    VCR.eject_cassette
     Redminerb.end!
   end
 
   subject { Redminerb::CLI.new }
+
   describe 'users command' do
     describe 'list subcommand ($ redminerb users list<INTRO>:)' do
       before do
         VCR.insert_cassette 'users_list'
       end
 
-      after do
-        VCR.eject_cassette
-      end
-
       let(:output) { capture(:stdout) { subject.users 'list' } }
 
       it 'give us all the users in our Redmine', :vcr do
         output.must_include "\tnando\t"
+      end
+    end
+  end
+
+  describe 'projects command' do
+    describe 'list subcommand ($ redminerb projects list<INTRO>)' do
+      before do
+        VCR.insert_cassette 'projects_list'
+      end
+
+      let(:output) { capture(:stdout) { subject.projects 'list' } }
+      let(:important_project) { "\tAcción Contra El Hambre" }
+      let(:other_project) { "\tPrimeroto" }
+
+      it 'give us the projects we have access to', :vcr do
+        output.must_include important_project
+        output.must_include other_project
+      end
+
+      describe '--query <FILTER> option' do
+        subject do
+          Redminerb::CLI.new.tap do |cli|
+            cli.options = { name: 'HAMBRE' }
+          end
+        end
+
+        let(:output) { capture(:stdout) { subject.projects 'list' } }
+
+        it 'filters the results using case unsensitive comparison', :vcr do
+          output.must_include important_project
+          output.wont_include other_project
+        end
       end
     end
   end
