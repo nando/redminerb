@@ -44,7 +44,7 @@ describe Redminerb::Template do
       let(:user) { OpenStruct.new(json_from_fixture('user')['user']) }
       let(:user_title) { "Id: ##{user.id}" }
       let(:issue) { RecursiveOpenStruct.new(json_from_fixture('issue')['issue']) }
-      let(:issue_title) { "Redminerb 2015:##{issue.id}" }
+      let(:issue_title) { "Redminerb 2015##{issue.id}" }
 
       it 'should be used by default for a user' do
         _(Redminerb::Template.render(:user, user)).must_include user_title

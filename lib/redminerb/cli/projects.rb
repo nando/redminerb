@@ -16,12 +16,8 @@ module Redminerb
           show(project_id)
         else
           Redminerb.init!
-          name = options.delete(:name)
-          Redminerb::Projects.list(options).each do |project|
-            if name.nil? || project.name =~ /#{name}/i
-              puts "#{project.id}\t".green + 
-                   project.name.split.map { |i| i.capitalize }.join(' ').green
-            end
+          Redminerb::Projects.list(options).each do |p|
+            puts "#{p.id}\t#{p.name.split.map(&:capitalize).join(' ')}".green
           end
         end
       end

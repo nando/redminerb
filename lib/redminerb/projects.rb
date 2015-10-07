@@ -13,9 +13,12 @@ module Redminerb
       #      puts "#{project.id}: #{project.name}"
       #   end
       #
-
       def list(params)
-        Redminerb.client.get_json('/projects.json', params)['projects'].map do |project|
+        projects = Redminerb.client.get_json('/projects.json', params)['projects']
+        if (name = params.delete(:name))
+          projects = projects.select {|p| p.name =~ /#{name}/i}
+        end
+        projects.map do |project|
           OpenStruct.new project
         end
       end
