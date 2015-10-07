@@ -39,7 +39,7 @@ module Redminerb
   end
 
   def init_required!
-    fail(UninitializedError, 'Call Redminerb.init! first') unless @initialized
+    fail(UninitializedError, 'call Redminerb.init! first') unless @initialized
   end
 
   def config

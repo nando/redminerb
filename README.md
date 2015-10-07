@@ -127,13 +127,13 @@ The **users** command is the wrapper for part of the [Users resource](http://www
 
     $ redminerb users # i.e. 'redminerb users list'
 
-That should give you the current users on your Redmine server, one per line.
+That should give you the current users on your Redmine server, one per line. It will return a 403 error if our API key's user doesn't have permission to list users.
 
-You can use the `--name` option to list users as described by the *name* filter of the API resource. The `-q` and `--query` are aliases for this option. For example:
+You can use the `--name` option to list users as described by the *name* filter of the API resource (see the link above). The `-q` and `--query` are aliases for this option. For example:
 
     $ redminerb users -q red # i.e. 'redminerb users list --name=red'
 
-Will show us the users which login, first name, last name or email contains the 'red' word.
+Will show us the **users whose login, first name, last name or email** contains the **'red'** word.
 
 By omission *users list* gives you the ID, the login and the e-mail of the user. You can
 change that using the *--fields (-f)* option, that let you specify others separated
@@ -196,6 +196,19 @@ Shows the info of an issue with a number or id.
 For example, to see the info of the issue #12539 we'd launch:
 
     $ redminerb issue 12539
+
+
+### Projects
+
+The **projects** command is the wrapper for part of the [Projects resource](http://www.redmine.org/projects/redmine/wiki/Rest_Projects) of the Redmine REST API.
+
+#### List projects
+
+    $ redminerb projects [list] [-q|--query <FILTER>]
+
+The command *projects* will give us the ids of every public and private project where the user have access to.
+
+The results can be **filtered** through a **case unsensitive match** using the *--query (-q, --name)* option. For example, the order `redminerb projects -q iber` will show us all projects whose names match **"IBER"**.
 
 ## Development
 

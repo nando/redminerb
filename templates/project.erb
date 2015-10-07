@@ -1,0 +1,14 @@
+<%= Redminerb.separator.green %>
+  <%= project.name.split.map { |i| i.capitalize }.join(' ').blue %> (#<%= project.id %>)
+<%= Redminerb.separator.green %>
+  <% if project.parent %>Parent:       <%= project.parent.name.capitalize.red %> (#<%= project.parent.id %>)<% end %>
+  Identifier:   <%= project.identifier.red %>
+  Homepage:     <%= project.homepage.red %>
+  Created date: <%= project.created_on.red %>
+  Updated:      <%= project.created_on.red %>
+  Status:       <%= project.status.to_s.red %>
+<%= Redminerb.separator.green %>
+  Description: <%= project.description.gsub("\n", "\n    ") %>
+<%= Redminerb.separator.green %>
+  <%= (Redminerb.config.url + "projects/#{project.id}").red %>
+<%= Redminerb.separator.green %>
