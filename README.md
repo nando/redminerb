@@ -185,7 +185,7 @@ The **issues** command is the wrapper for part of the [Issues resource](http://w
 
 #### List issues
 
-    $ redminerb issues [list] [--project_id|-p <id>] [--assigned_to_id|-a <id>]
+    $ redminerb issues [list] [--closed|-c] [--project_id|-p <id>] [--assigned_to_id|-a <id>]
 
 Examples:
 
