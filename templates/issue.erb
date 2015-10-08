@@ -6,7 +6,7 @@
   Status:      <%= issue.status.name.red %>
   Priority:    <%= issue.priority.name.red %>
 <%= Redminerb.separator.green %>
-  <%= issue.description %>
+  <%= issue.description.gsub("\n", "\n  ") %>
 <%= Redminerb.separator.green %>
   <%= (Redminerb.config.url + "issues/#{issue.id}").red %>
 <%= Redminerb.separator.green %>
