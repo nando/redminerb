@@ -185,16 +185,20 @@ The **issues** command is the wrapper for part of the [Issues resource](http://w
 
 #### List issues
 
-    $ redminerb issues [list] [--project_id|-p <id>]
+    $ redminerb issues [list] [--project_id|-p <id>] [--assigned_to_id|-a <id>]
 
 Examples:
 
     $ # Show the first three issues of the project whose id equals 1:
-    $ redminerb issues list -p 1 -l 3
-    [Sistemas#42148] Poner Pisco en modo sólo lectura
-    [Sistemas#42010] [Tatefiel] Añadir tarea de cron
-    [Sistemas#41972] SSID para cámaras de seguridad
+    $ redminerb issues -p 1 -l 3
+    [Systems#148] Poner Pisco en modo sólo lectura
+    [Systems#110] [Tatefiel] Añadir tarea de cron
+    [Systems#172] SSID para cámaras de seguridad
 
+    $ # Show the issues assigned to the user whose id equals 42:
+    $ redminerb issues -a 42
+    [Primeroto#166] Se deben mover todas las imágenes al proyecto
+    [Primeroto#165] No se pueden escoger los eventos de entradas
 
 #### Show an issue
 
