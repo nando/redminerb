@@ -13,7 +13,6 @@ module Redminerb
       #      puts "#{issue.id}: #{issue.subject}"
       #   end
       #
-
       def list(params)
         Redminerb.client.get_json('/issues.json', params)['issues'].map do |issue|
           RecursiveOpenStruct.new issue

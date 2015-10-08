@@ -10,6 +10,7 @@ module Redminerb
       desc 'list', 'Shows open issues in our Redmine'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :project_id, aliases: [:project, :p]
       def list(issue_id = nil)
         if issue_id
           show(issue_id)
