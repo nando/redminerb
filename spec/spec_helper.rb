@@ -29,19 +29,5 @@ module Redminerb
     def json_from_fixture(fixture)
       JSON.parse(File.read(fixture_path("#{fixture}.json")))
     end
-
-    def capture(stream)
-      # rubocop:disable Lint/Eval
-      begin
-        stream = stream.to_s
-        eval "$#{stream} = StringIO.new"
-        yield
-        result = eval("$#{stream}").string
-      ensure
-        eval("$#{stream} = #{stream.upcase}")
-      end
-      result
-      # rubocop:enable Lint/Eval
-    end
   end
 end

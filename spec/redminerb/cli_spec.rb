@@ -22,7 +22,7 @@ describe Redminerb::CLI do
         VCR.insert_cassette 'users_list'
       end
 
-      let(:output) { capture(:stdout) { subject.users 'list' } }
+      let(:output) { capture_io { subject.users 'list' }[0] }
 
       it 'give us all the users in our Redmine', :vcr do
         output.must_include "\tnando\t"
@@ -36,7 +36,7 @@ describe Redminerb::CLI do
         VCR.insert_cassette 'projects_list'
       end
 
-      let(:output) { capture(:stdout) { subject.projects 'list' } }
+      let(:output) { capture_io { subject.projects 'list' }[0] }
       let(:important_project) { "\tAcción Contra El Hambre" }
       let(:other_project) { "\tPrimeroto" }
 
@@ -52,7 +52,7 @@ describe Redminerb::CLI do
           end
         end
 
-        let(:output) { capture(:stdout) { subject.projects 'list' } }
+        let(:output) { capture_io { subject.projects 'list' }[0] }
 
         it 'filters the results using case unsensitive comparison', :vcr do
           output.must_include important_project
