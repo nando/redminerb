@@ -16,7 +16,7 @@ module Redminerb
         else
           Redminerb.init!
           Redminerb::Issues.list(options).each do |issue|
-            puts "[#{issue.id}] ".blue + issue.subject.green
+            puts "[#{issue.project.name}##{issue.id}] ".blue + issue.subject.green
           end
         end
       end

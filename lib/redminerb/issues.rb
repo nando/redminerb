@@ -16,7 +16,7 @@ module Redminerb
 
       def list(params)
         Redminerb.client.get_json('/issues.json', params)['issues'].map do |issue|
-          OpenStruct.new issue
+          RecursiveOpenStruct.new issue
         end
       end
 
