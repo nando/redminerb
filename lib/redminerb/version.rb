@@ -1,4 +1,4 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
 module Redminerb
-  VERSION = '0.7.3'
+  VERSION = '0.7.4'
 end
