@@ -1,4 +1,12 @@
 = CHANGELOG
+== 0.8, released 2015-10-09
+
+* Users' create now asks for each param unless we use the --no-ask option
+* +redminerb project [show] <id>+ to see a project's info
+* +redminerb projects list [--name <FILTER>]+ to see our projects
+* +--project_id+, +assigned_to+ and +--closed+ options to filter *issues*
+* Minor fixes
+
 == 0.7, released 2015-10-05
 
 * Show subcommand's +--template+ option for user/issue command to indicate the .erb template to render.

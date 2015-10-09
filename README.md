@@ -162,22 +162,19 @@ Will give us the info associated with the user with the given *id*.
 
 To create a new user we should use the *create* subcommand:
 
-    $ redminerb users create --login wadus --password="ultrasecret" \
-                             --firstname="Wadux" --lastname Wallace \
-                             --mail "wadus@waduxwallace.out"
+    $ redminerb users create
 
-The options have the following aliases (extracted from `redminerb users help create`):
+It **will ask for the required params** giving us the possibility to fix any mistake until we confirm that everything is ok.
 
-    l, --login=LOGIN           
-    p, --password=PASSWORD     
-    fn, --firstname=FIRSTNAME  
-    ln, --lastname=LASTNAME    
-    m, --mail=MAIL
+If want to supply some (or all) of the values when calling `redminerb` we can use the following subcommand options (extracted from `redminerb users help create`):
 
-So, the previous command is the same as the following:
+    -n, --name, [--login=LOGIN]
+    -p, --pass, [--password=PASSWORD]
+    -f, --fn, [--firstname=FIRSTNAME]
+    -l, --ln, [--lastname=LASTNAME]
+    -m, --email, [--mail=MAIL]
 
-    $ redminerb users create -l wadus -p ultrasecret -fn Wadux -ln Wallace \
-                             -m wadus@waduxwallace.out
+Use the option **--no-ask** if you're supplying all the required values and don't want to be asked for them (from a script, for example).
 
 ### Issues
 

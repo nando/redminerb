@@ -23,17 +23,34 @@ module Redminerb
           end
         end
       end
-  
+ 
+      # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+      # (i'd move code from here but inheriting from Thor i still don't know how :(
       desc 'create', 'Creates a user.'
-      option :login,     aliases: :l,  required: true
-      option :password,  aliases: :p,  required: true
-      option :firstname, aliases: :fn, required: true
-      option :lastname,  aliases: :ln, required: true
-      option :mail,      aliases: :m,  required: true
+      option :ask, type: :boolean, default: true
+      option :login,     aliases: [:n, '--name']
+      option :password,  aliases: [:p, '--pass']
+      option :firstname, aliases: [:f, '--fn']
+      option :lastname,  aliases: [:l, '--ln']
+      option :mail,      aliases: [:m, '--email']
       def create
         Redminerb.init!
+        if options[:ask]
+          loop do
+            initializer_data = @_initializer.detect do |internal|
+              internal.is_a?(Hash) && internal.keys.include?(:current_command)
+            end
+            initializer_data[:current_command].options.keys.each do |option|
+              next if option == :ask
+              value = ask("#{option.capitalize} [#{options[option]}]:", Thor::Shell::Color::GREEN)
+              options[option] = value unless value.empty?
+            end
+            break if yes?('Is everything OK? (NO/yes)')
+          end
+        end
         puts Redminerb::Users.create(options).green
       end
+      # rubocop:enabled Metrics/AbcSize, Metrics/MethodLength
   
       desc 'me', 'Shows the info of the owner of the API key.'
       def me
