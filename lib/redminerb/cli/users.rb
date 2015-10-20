@@ -12,6 +12,8 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :all, type: :boolean
+
       def list(user_id = nil)
         if user_id
           show user_id
