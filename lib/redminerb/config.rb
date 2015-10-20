@@ -5,10 +5,7 @@ module Redminerb
   # Read user's config from ~/.redminerb.yml
   class Config
     def initialize
-      YAML.load_file(File.join(ENV['HOME'], '.redminerb.yml')).tap do |yaml|
-        @url = yaml['url']
-        @api_key = yaml['api_key']
-      end
+      ENV['REDMINERB_URL'] ? _from_env : _from_yml
     end
 
     def url
@@ -19,6 +16,20 @@ module Redminerb
     def api_key
       Redminerb.init_required!
       @api_key
+    end
+
+    private
+
+    def _from_yml
+      YAML.load_file(File.join(ENV['HOME'], '.redminerb.yml')).tap do |yaml|
+        @url = yaml['url']
+        @api_key = yaml['api_key']
+      end
+    end
+
+    def _from_env
+      @url = ENV['REDMINERB_URL']
+      @api_key = ENV['REDMINERB_API_KEY']
     end
   end
 end

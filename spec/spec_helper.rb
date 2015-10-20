@@ -5,5 +5,29 @@ require 'pry'
 require 'minitest/spec'
 require 'minitest/autorun'
 
-SPECS_TMP_DIR  = './tmp/specs'
-SPECS_HOME_DIR = './spec/fixtures/home'
+require 'minitest-vcr'
+require 'webmock'
+require 'climate_control'
+
+SPECS_TMP_DIR      = './tmp/specs'
+SPECS_FIXTURES_DIR = './spec/fixtures'
+SPECS_HOME_DIR     = SPECS_FIXTURES_DIR + '/home'
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+end
+
+MinitestVcr::Spec.configure!
+
+module Redminerb
+  module Spec
+    def fixture_path(filename)
+      File.join(File.dirname(__FILE__), 'fixtures', filename)
+    end
+    
+    def json_from_fixture(fixture)
+      JSON.parse(File.read(fixture_path("#{fixture}.json")))
+    end
+  end
+end

@@ -1,0 +1,13 @@
+<%= Redminerb.separator.green %>
+  <%= user.login.upcase.green %>
+<%= Redminerb.separator.green %>
+   Id: <%= "##{user.id}" %>
+   * Firstname: <%= user.firstname.red %>
+   * Lastname:  <%= user.lastname.red %>
+   * Login:     <%= user.login.red %>
+   * E-Mail:    <%= user.mail.red %>
+<%= Redminerb.separator.green %>
+   * Created:    <%= user.created_on.blue %>
+   * Last login: <%= user.last_login_on.blue %>
+   * Status:     <%= user.status.to_s.blue %>
+<%= Redminerb.separator.green %>

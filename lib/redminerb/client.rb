@@ -1,12 +1,11 @@
 # Copyright (c) The Cocktail Experience S.L. (2015)
 require 'faraday'
 require 'json'
-require 'ostruct'
 
 module Redminerb
   # HTTP client to communicate w/ the Redmine server.
   class Client
-    attr_reader :connection
+    class UnprocessableEntity < StandardError; end
 
     def initialize(cfg)
       @connection = Faraday.new(url: cfg.url) do |f|
@@ -15,29 +14,52 @@ module Redminerb
       @connection.basic_auth(cfg.api_key, cfg.api_key)
     end
 
-    # Get the users of our Redmine as OpenStruct objects.
-    #
-    # Example:
-    #   Redminerb.init!
-    #   Redminerb.client.users.each do |user|
-    #      puts user.firstname
-    #   end
-    #
-    # See lib/reminerb/cli/user.rb code to see other example/s.
+    # Makes a GET request of the given 'path' param and returns the body of the
+    # response parsed as JSON.
+    def get_json(path, params = {})
+      Redminerb.init_required!
+      res = _get(path, params)
+      if res.status == 404
+        fail Redminerb::NotFoundError, path
+      else
+        JSON.parse(res.body)
+      end
+    rescue JSON::ParserError => e
+      raise e, "HTTP status code #{res.status}"
+    end
 
-    def users
-      get_json('/users.json')['users'].map do |user|
-        OpenStruct.new user
+    # Makes a POST request to 'path' with 'params' in JSON format. 
+    def post_json(path, params)
+      Redminerb.init_required!
+      @connection.post do |req|
+        req.url path
+        req.headers['Content-Type'] = 'application/json'
+        req.body = params.to_json
+      end
+    end
+
+    # It raises an exception giving the validation messages for 422 responses.
+    def self.raise_error!(res)
+      if res.status == 422
+        begin
+          errors = JSON.parse(res.body)['errors']
+        rescue JSON::ParserError
+          errors = [res.body]
+        end
+        fail UnprocessableEntity, errors.join("\n")
+      else
+        fail StandardError, "ERROR (status code #{res.status})"
       end
     end
 
     private
 
-    # Requests the path that receives as param and parses the body of the
-    # response received as JSON.
-    def get_json(path)
-      Redminerb.init_required!
-      JSON.parse(@connection.get(path).body)
+    def _get(path, params)
+      @connection.get do |req|
+        req.url path
+        req.headers['Content-Type'] = 'application/json'
+        req.body = params.to_json if params.any?
+      end
     end
   end
 end

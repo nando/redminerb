@@ -1,0 +1,21 @@
+<%= 
+  [
+    Redminerb.top,
+    Redminerb.line(user.login.upcase),
+    Redminerb.middle,
+    [
+      "* Id: #{user.id}",
+      "* Firstname:  #{user.firstname}",
+      "* Lastname:   #{user.lastname}",
+      "* Login:      #{user.login}",
+      "* E-Mail:     #{user.mail}"
+    ].map{|l| Redminerb.line l },
+    Redminerb.middle,
+    [
+      "* Created:    #{user.created_on}",
+      "* Last login: #{user.last_login_on}",
+      "* Status:     #{user.status}"
+    ].map{|l| Redminerb.line l },
+    Redminerb.bottom
+  ].join.green
+%>

@@ -1,4 +1,41 @@
+= CHANGELOG
+== 0.8, released 2015-10-09
+
+* Users' create now asks for each param unless we use the --no-ask option
+* +redminerb project [show] <id>+ to see a project's info
+* +redminerb projects list [--name <FILTER>]+ to see our projects
+* +--project_id+, +assigned_to+ and +--closed+ options to filter *issues*
+* Minor fixes
+
+== 0.7, released 2015-10-05
+
+* Show subcommand's +--template+ option for user/issue command to indicate the .erb template to render.
+* Optimized & unified the default subcommand (list/show).
+* ASCII box chars "helpers" added to the Redminerb module singleton functions.
+* Two alternative views (*issue_boxie.erb* and *user_in_a_box.erb*).
+
+== 0.6, released 2015-09-28
+
+* +templates/issue.erb+ uses a recursive OStruct for internal objects -letting us for example say +issue.author.name+ instead of +issue.author['name']+
+
+== 0.5, released 2015-09-23
+
+* Local or home +.redminerb/templates+ directory for resource output customizations
+
+== 0.4, released 2015-09-22
+
+* +redminerb users show <id>+ to see a user's info
+
+== 0.3, released 2015-09-22
+
+* +redminerb issues [show] <number>+ to see an issue's info
+* +redminerb issues list+ to see open issues
+
+== 0.2, released 2015-09-17
+
+* +redminerb users create+ to create a brand new user!
+
 == 0.1, released 2015-09-16
 
-* 'redminerb config' to get current config
-* 'redminerb users [list]' to see current users
+* +redminerb config+ to get current config
+* +redminerb users [list]+ to see current users
