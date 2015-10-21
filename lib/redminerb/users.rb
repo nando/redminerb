@@ -20,7 +20,22 @@ module Redminerb
           OpenStruct.new user
         end
       end
-  
+
+      def list_all(params)
+        offset = 0
+        users = []
+        params[:offset] = 0
+        begin
+          params[:offset] = offset
+          list = Redminerb.client.get_json('/users.json', params)
+          offset = offset + list["limit"]
+          users = users + list["users"]
+        end until offset > list["total_count"]
+        users.map do |user|
+          OpenStruct.new user
+        end
+      end
+
       # Creates a brand new user with the given params. In lib/reminerb/cli/user.rb
       # you can see which ones are required (or running 'redminerb users create'
       # from the command line).
@@ -54,6 +69,7 @@ module Redminerb
       def read(id)
         OpenStruct.new Redminerb.client.get_json("/users/#{id}.json")['user']
       end
+
     end
   end
 end

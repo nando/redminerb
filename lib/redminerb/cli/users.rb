@@ -20,8 +20,15 @@ module Redminerb
         else
           Redminerb.init!
           fields = options.delete(:fields) || 'id:login:mail'
-          Redminerb::Users.list(options).each do |user|
-            puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+          if options.delete(:all)
+            options[:limit] = 100
+            Redminerb::Users.list_all(options).each do |user|
+              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+            end
+          else
+            Redminerb::Users.list(options).each do |user|
+              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+            end
           end
         end
       end
