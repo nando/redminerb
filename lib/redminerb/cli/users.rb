@@ -12,14 +12,23 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :all, type: :boolean
+
       def list(user_id = nil)
         if user_id
           show user_id
         else
           Redminerb.init!
           fields = options.delete(:fields) || 'id:login:mail'
-          Redminerb::Users.list(options).each do |user|
-            puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+          if options.delete(:all)
+            options[:limit] = 100
+            Redminerb::Users.list_all(options).each do |user|
+              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+            end
+          else
+            Redminerb::Users.list(options).each do |user|
+              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
+            end
           end
         end
       end
