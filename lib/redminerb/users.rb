@@ -14,24 +14,12 @@ module Redminerb
       #   end
       #
       # See lib/reminerb/cli/user.rb code to see other example/s.
-  
       def list(params)
-        Redminerb.client.get_json('/users.json', params)['users'].map do |user|
-          OpenStruct.new user
-        end
-      end
-
-      def list_all(params)
-        offset = 0
-        users = []
-        params[:offset] = 0
-        begin
-          params[:offset] = offset
-          list = Redminerb.client.get_json('/users.json', params)
-          offset = offset + list["limit"]
-          users = users + list["users"]
-        end until offset > list["total_count"]
-        users.map do |user|
+        if params.delete('all')
+          Redminerb.client.get_collection(:users, params)
+        else
+          Redminerb.client.get_json('/users.json', params)['users']
+        end.map do |user|
           OpenStruct.new user
         end
       end
@@ -69,7 +57,6 @@ module Redminerb
       def read(id)
         OpenStruct.new Redminerb.client.get_json("/users/#{id}.json")['user']
       end
-
     end
   end
 end

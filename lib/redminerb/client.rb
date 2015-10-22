@@ -14,6 +14,23 @@ module Redminerb
       @connection.basic_auth(cfg.api_key, cfg.api_key)
     end
 
+    # Uses pagination (limit&offset) params to retreive all the resources of
+    # the collection "name" using "params" in each request. Returns an array
+    # with all the resources.
+    def get_collection(name, params = { 'limit': 100 })
+      offset = 0
+      limit = params['limit'].to_i
+      [].tap do |resources|
+        loop do
+          params['offset'] = offset
+          response = get_json("/#{name}.json", params)
+          resources << response[name.to_s]
+          offset += limit
+          break unless offset < response['total_count']
+        end
+      end.flatten
+    end
+
     # Makes a GET request of the given 'path' param and returns the body of the
     # response parsed as JSON.
     def get_json(path, params = {})

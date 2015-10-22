@@ -12,7 +12,13 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
-      option :all, type: :boolean
+      option :all, type: :boolean,
+                   desc: "List all the users at the database. Internally it makes\n" + <<-DESC
+                                 # as many HTTP requests to the REST API as needed (the
+                                 # --limit option us manage that number setting the maximum
+                                 # number of users it will get each time). To search consider
+                                 # using the --query option instead (if possible).
+                               DESC
 
       def list(user_id = nil)
         if user_id
@@ -20,15 +26,8 @@ module Redminerb
         else
           Redminerb.init!
           fields = options.delete(:fields) || 'id:login:mail'
-          if options.delete(:all)
-            options[:limit] = 100
-            Redminerb::Users.list_all(options).each do |user|
-              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
-            end
-          else
-            Redminerb::Users.list(options).each do |user|
-              puts fields.split(':').map {|f| user.send(f)}.join("\t").green
-            end
+          Redminerb::Users.list(options).each do |user|
+            puts fields.split(':').map {|f| user.send(f)}.join("\t").green
           end
         end
       end
@@ -51,7 +50,8 @@ module Redminerb
             end
             initializer_data[:current_command].options.keys.each do |option|
               next if option == :ask
-              value = ask("#{option.capitalize} [#{options[option]}]:", Thor::Shell::Color::GREEN)
+              value = ask("#{option.capitalize} [#{options[option]}]:",
+                          Thor::Shell::Color::GREEN)
               options[option] = value unless value.empty?
             end
             break if yes?('Is everything OK? (NO/yes)')

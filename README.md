@@ -145,6 +145,8 @@ Will return only the ID following by the user's email.
 
 You can see **all the fields available** with `redminerb user me`.
 
+**To list all the users at the database** you can use the `--all` option. Internally it will make as many HTTP requests to the REST API as needed. Here the `--limit` option let's manage the maximum number of users it will get with each request (to search, if possible, consider using the `--query` option instead).
+
 #### Show our info in the Redmine server
 
     $ redminerb user me

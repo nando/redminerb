@@ -26,7 +26,9 @@ module Redminerb
       option :template, aliases: :t
       def show(project_id)
         Redminerb.init!
-        puts Redminerb::Template.render(:project, Redminerb::Projects.read(project_id), options)
+        puts Redminerb::Template.render(:project,
+                                        Redminerb::Projects.read(project_id),
+                                        options)
       end
     end
   end
