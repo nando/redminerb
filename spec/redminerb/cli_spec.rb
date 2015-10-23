@@ -17,15 +17,34 @@ describe Redminerb::CLI do
   subject { Redminerb::CLI.new }
 
   describe 'users command' do
-    describe 'list subcommand ($ redminerb users list<INTRO>:)' do
-      before do
-        VCR.insert_cassette 'users_list'
-      end
-
+    describe 'list subcommand' do
       let(:output) { capture_io { subject.users :list }[0] }
 
-      it 'give us all the users in our Redmine', :vcr do
-        output.must_include "\tnando\t"
+      describe 'default behaviour (without any option)' do
+        before do
+          VCR.insert_cassette 'users_list'
+        end
+  
+        it 'shows users from our Redmine', :vcr do
+          output.must_include "\tnando\t"
+        end
+      end
+
+      describe '--all option' do
+        before do
+          VCR.insert_cassette 'users_list_all'
+        end
+  
+        subject do
+          Redminerb::CLI.new.tap do |cli|
+            cli.options = { all: true }
+          end
+        end
+
+        it 'shows all the users (429) with several (5) requests', :vcr do
+          _(output.lines.count).must_equal 429
+          _(Redminerb.client.requests).must_equal 5
+        end
       end
     end
   end

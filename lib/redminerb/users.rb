@@ -15,7 +15,7 @@ module Redminerb
       #
       # See lib/reminerb/cli/user.rb code to see other example/s.
       def list(params)
-        if params.delete('all')
+        if params.delete(:all)
           Redminerb.client.get_collection(:users, params)
         else
           Redminerb.client.get_json('/users.json', params)['users']

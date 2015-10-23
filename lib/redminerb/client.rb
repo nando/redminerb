@@ -7,11 +7,14 @@ module Redminerb
   class Client
     class UnprocessableEntity < StandardError; end
 
+    attr_reader :requests
+
     def initialize(cfg)
       @connection = Faraday.new(url: cfg.url) do |f|
         f.adapter Faraday.default_adapter
       end
       @connection.basic_auth(cfg.api_key, cfg.api_key)
+      @requests = 0
     end
 
     # Uses pagination (limit&offset) params to retreive all the resources of
@@ -72,6 +75,7 @@ module Redminerb
     private
 
     def _get(path, params)
+      @requests += 1
       @connection.get do |req|
         req.url path
         req.headers['Content-Type'] = 'application/json'
