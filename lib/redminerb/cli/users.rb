@@ -13,12 +13,13 @@ module Redminerb
       option :offset, aliases: :o
       option :limit, aliases: :l
       option :all, type: :boolean,
-                   desc: "List all the users at the database. Internally it makes\n" + <<-DESC
-                                 # as many HTTP requests to the REST API as needed (the
-                                 # --limit option us manage that number setting the maximum
-                                 # number of users it will get each time). To search consider
+                   desc: "List all the users at the database. Internally it makes\n" +
+                     <<-DESC
+                                 # as many HTTP requests to the REST API as needed. The
+                                 # --limit option says to redminerb the maximum number of
+                                 # users it should get with each request. To search consider
                                  # using the --query option instead (if possible).
-                               DESC
+                     DESC
 
       def list(user_id = nil)
         if user_id
