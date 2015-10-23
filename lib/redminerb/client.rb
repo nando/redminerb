@@ -17,15 +17,15 @@ module Redminerb
     # Uses pagination (limit&offset) params to retreive all the resources of
     # the collection "name" using "params" in each request. Returns an array
     # with all the resources.
-    def get_collection(name, params = { 'limit': 100 })
+    def get_collection(name, params = {})
       offset = 0
-      limit = params['limit'].to_i
+      params[:limit] ||= 100
       [].tap do |resources|
         loop do
-          params['offset'] = offset
+          params[:offset] = offset
           response = get_json("/#{name}.json", params)
           resources << response[name.to_s]
-          offset += limit
+          offset += params[:limit].to_i
           break unless offset < response['total_count']
         end
       end.flatten
