@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/projects.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"a8ce0414e1f7321d6f3a0ce50990066c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 510c52474920ea808d5822ca4a85d63c
+      X-Runtime:
+      - '0.084270'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      Date:
+      - Wed, 07 Oct 2015 17:47:50 GMT
+      Content-Length:
+      - '670'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"projects":[{"id":284,"name":"Acci\u00f3n Contra el Hambre ","identifier":"accion-contra-el-hambre","description":"Proyecto
+        Web","status":1,"created_on":"2014-11-06T13:29:40Z","updated_on":"2014-11-06T13:29:40Z"},{"id":207,"name":"Primeroto","identifier":"primeroto","description":"","status":1,"created_on":"2013-02-05T16:19:20Z","updated_on":"2013-02-05T16:19:20Z"},{"id":269,"name":"MODESTO-
+        Desarrollo Gastada","identifier":"modesto-desarrollo-gastada","description":"Implementaci\u00f3n
+        de Magento para el e-commerce de Modesto (web y RWD)","status":5,"created_on":"2014-07-28T15:05:17Z","updated_on":"2014-07-28T15:05:17Z"}],"total_count":3,"offset":0,"limit":25}'
+    http_version: 
+  recorded_at: Wed, 07 Oct 2015 17:47:50 GMT
+recorded_with: VCR 2.9.3

@@ -14,7 +14,11 @@ module Redminerb
       #   end
       #
       def list(params)
-        projects = Redminerb.client.get_json('/projects.json', params)['projects']
+        projects = if params.delete(:all)
+                     Redminerb.client.get_collection(:projects, params)
+                   else
+                     Redminerb.client.get_json('/projects.json', params)['projects']
+                   end
         if (name = params.delete(:name))
           projects = projects.select {|project| project['name'] =~ /#{name}/i}
         end

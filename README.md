@@ -216,7 +216,7 @@ The **projects** command is the wrapper for part of the [Projects resource](http
 
 #### List projects
 
-    $ redminerb projects [list] [-q|--query <FILTER>]
+    $ redminerb projects [list] [-q|--query <FILTER>] [--all]
 
 The command *projects* will give us the ids of every public and private project where the user have access to.
 

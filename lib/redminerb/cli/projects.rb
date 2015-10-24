@@ -11,6 +11,8 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :all, type: :boolean
+
       def list(project_id = nil)
         if project_id
           show(project_id)
