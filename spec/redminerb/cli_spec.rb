@@ -81,37 +81,36 @@ describe Redminerb::CLI do
       end
 
       describe 'the "--query <FILTER>" option' do
-        let(:important_project) { "\tAcción Contra El Hambre" }
-        let(:other_project) { "\tPrimeroto" }
-        let(:last_project) { "\tProject #275" }
+        let(:searched_id) { 208 }
+        let(:first_page_id) { 310 }
+        let(:last_project_id) { 275 }
 
         before do
           VCR.insert_cassette 'projects_list_query'
         end
-  
+
         subject do
           Redminerb::CLI.new.tap do |cli|
-            cli.options = { name: 'HAMBRE' }
+            cli.options = { name: "Project ##{searched_id}" }
           end
         end
 
         let(:output) { capture_io { subject.projects :list }[0] }
 
         it 'filters the results using case unsensitive comparison', :vcr do
-          _(output).must_include important_project
-          _(output).wont_include other_project
+          _(output).must_include "\tProject ##{searched_id}"
+          _(output).wont_include "\tProject ##{first_page_id}"
         end
 
-        describe 'with results after first page' do
+        describe 'search result after first page' do
           subject do
             Redminerb::CLI.new.tap do |cli|
-              cli.options = { name: '#275' }
+              cli.options = { name: "Project ##{last_project_id}" }
             end
           end
 
           it 'should work' do
-            skip # to let the query command be reliable we should query --all
-            _(output).must_include last_project
+            _(output).must_include "\tProject ##{last_project_id}"
           end
         end
       end

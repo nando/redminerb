@@ -4,11 +4,11 @@ http_interactions:
     method: get
     uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/projects.json
     body:
-      encoding: US-ASCII
-      string: ''
+      encoding: UTF-8
+      string: '{"limit":100,"offset":0}'
     headers:
       User-Agent:
-      - Faraday v0.9.1
+      - Faraday v0.9.2
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -25,27 +25,648 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - '"a8ce0414e1f7321d6f3a0ce50990066c"'
+      - '"b81bd179e012a6b9bebec076f39d4ff0"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 510c52474920ea808d5822ca4a85d63c
+      - 67984888dbcc73cdd269130a079fdf2f
       X-Runtime:
-      - '0.084270'
+      - '0.515523'
       Server:
-      - WEBrick/1.3.1 (Ruby/2.2.2/2015-04-13)
+      - WEBrick/1.3.1 (Ruby/2.2.3/2015-08-18)
       Date:
-      - Wed, 07 Oct 2015 17:47:50 GMT
+      - Mon, 26 Oct 2015 09:40:06 GMT
       Content-Length:
-      - '670'
+      - '19901'
       Connection:
       - Keep-Alive
     body:
       encoding: UTF-8
-      string: '{"projects":[{"id":284,"name":"Acci\u00f3n Contra el Hambre ","identifier":"accion-contra-el-hambre","description":"Proyecto
-        Web","status":1,"created_on":"2014-11-06T13:29:40Z","updated_on":"2014-11-06T13:29:40Z"},{"id":207,"name":"Primeroto","identifier":"primeroto","description":"","status":1,"created_on":"2013-02-05T16:19:20Z","updated_on":"2013-02-05T16:19:20Z"},{"id":269,"name":"MODESTO-
-        Desarrollo Gastada","identifier":"modesto-desarrollo-gastada","description":"Implementaci\u00f3n
-        de Magento para el e-commerce de Modesto (web y RWD)","status":5,"created_on":"2014-07-28T15:05:17Z","updated_on":"2014-07-28T15:05:17Z"}],"total_count":3,"offset":0,"limit":25}'
+      string: '{"projects":[{"id":284,"name":"Project #284","identifier":"project_284","description":"Project
+        #284 description","created_on":"2014-11-06T13:29:40Z","updated_on":"2014-11-06T13:29:40Z"},{"id":294,"name":"Project
+        #294","identifier":"project_294","description":"Project #294 description","parent":{"id":284,"name":"Project
+        #284"},"created_on":"2015-02-27T09:27:30Z","updated_on":"2015-03-04T10:24:43Z"},{"id":208,"name":"Project
+        #208","identifier":"project_208","description":"Project #208 description","created_on":"2013-02-19T16:45:57Z","updated_on":"2015-04-22T19:33:13Z"},{"id":198,"name":"Project
+        #198","identifier":"project_198","description":"Project #198 description","created_on":"2012-10-09T11:36:17Z","updated_on":"2014-03-25T14:52:57Z"},{"id":236,"name":"Project
+        #236","identifier":"project_236","description":"Project #236 description","parent":{"id":198,"name":"Project
+        #198"},"created_on":"2013-07-15T07:02:49Z","updated_on":"2014-03-25T14:52:56Z"},{"id":249,"name":"Project
+        #249","identifier":"project_249","description":"Project #249 description","created_on":"2013-11-11T18:02:46Z","updated_on":"2015-04-22T19:33:33Z"},{"id":233,"name":"Project
+        #233","identifier":"project_233","description":"Project #233 description","created_on":"2013-07-05T08:21:54Z","updated_on":"2013-10-13T20:02:40Z"},{"id":256,"name":"Project
+        #256","identifier":"project_256","description":"Project #256 description","parent":{"id":233,"name":"Project
+        #233"},"created_on":"2014-02-03T10:11:56Z","updated_on":"2014-02-03T10:11:56Z"},{"id":234,"name":"Project
+        #234","identifier":"project_234","description":"Project #234 description","parent":{"id":233,"name":"Project
+        #233"},"created_on":"2013-07-10T07:28:23Z","updated_on":"2013-07-10T07:28:23Z"},{"id":310,"name":"Project
+        #310","identifier":"project_310","description":"Project #310 description","created_on":"2015-07-08T07:55:54Z","updated_on":"2015-07-08T07:55:54Z"},{"id":212,"name":"Project
+        #212","identifier":"project_212","description":"Project #212 description","created_on":"2013-03-13T09:10:42Z","updated_on":"2013-03-13T09:10:42Z"},{"id":259,"name":"Project
+        #259","identifier":"project_259","description":"Project #259 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2014-03-03T15:00:13Z","updated_on":"2014-03-03T15:03:01Z"},{"id":279,"name":"Project
+        #279","identifier":"project_279","description":"Project #279 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2014-10-22T13:54:49Z","updated_on":"2014-10-22T13:54:49Z"},{"id":309,"name":"Project
+        #309","identifier":"project_309","description":"Project #309 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2015-06-24T16:45:07Z","updated_on":"2015-06-24T16:45:07Z"},{"id":261,"name":"Project
+        #261","identifier":"project_261","description":"Project #261 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2014-03-04T09:54:32Z","updated_on":"2014-03-04T09:54:32Z"},{"id":207,"name":"Project
+        #207","identifier":"project_207","description":"Project #207 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2013-02-05T16:19:20Z","updated_on":"2013-02-05T16:19:20Z"},{"id":231,"name":"Project
+        #231","identifier":"project_231","description":"Project #231 description","parent":{"id":207,"name":"Project
+        #207"},"created_on":"2013-06-24T15:19:33Z","updated_on":"2014-06-06T10:06:31Z"},{"id":244,"name":"Project
+        #244","identifier":"project_244","description":"Project #244 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2013-10-10T07:55:56Z","updated_on":"2013-11-28T11:40:47Z"},{"id":215,"name":"Project
+        #215","identifier":"project_215","description":"Project #215 description","parent":{"id":212,"name":"Project
+        #212"},"created_on":"2013-03-26T17:09:16Z","updated_on":"2013-03-26T17:09:16Z"},{"id":242,"name":"Project
+        #242","identifier":"project_242","description":"Project #242 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2013-09-30T10:55:28Z","updated_on":"2013-09-30T10:55:28Z"},{"id":223,"name":"Project
+        #223","identifier":"project_223","description":"Project #223 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2013-05-14T07:26:12Z","updated_on":"2013-11-28T11:42:28Z"},{"id":260,"name":"Project
+        #260","identifier":"project_260","description":"Project #260 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2014-03-03T15:06:09Z","updated_on":"2014-05-06T11:40:00Z"},{"id":229,"name":"Project
+        #229","identifier":"project_229","description":"Project #229 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2013-06-17T10:09:46Z","updated_on":"2013-06-17T10:09:46Z"},{"id":243,"name":"Project
+        #243","identifier":"project_243","description":"Project #243 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2013-10-03T07:25:18Z","updated_on":"2014-06-06T10:06:51Z"},{"id":246,"name":"Project
+        #246","identifier":"project_246","description":"Project #246 description","parent":{"id":215,"name":"Project
+        #215"},"created_on":"2013-10-30T15:27:07Z","updated_on":"2013-11-28T11:43:35Z"},{"id":50,"name":"Project
+        #50","identifier":"project_50","description":"Project #50 description","created_on":"2009-06-23T07:31:59Z","updated_on":"2013-07-29T11:02:48Z"},{"id":52,"name":"Project
+        #52","identifier":"project_52","description":"Project #52 description","parent":{"id":50,"name":"Project
+        #50"},"created_on":"2009-06-29T10:29:13Z","updated_on":"2012-07-25T15:19:24Z"},{"id":197,"name":"Project
+        #197","identifier":"project_197","description":"Project #197 description","created_on":"2012-10-05T12:54:10Z","updated_on":"2015-04-22T19:34:03Z"},{"id":319,"name":"Project
+        #319","identifier":"project_319","description":"Project #319 description","created_on":"2015-09-09T07:58:09Z","updated_on":"2015-09-09T07:58:09Z"},{"id":320,"name":"Project
+        #320","identifier":"project_320","description":"Project #320 description","parent":{"id":319,"name":"Project
+        #319"},"created_on":"2015-09-16T08:35:57Z","updated_on":"2015-09-16T09:12:58Z"},{"id":251,"name":"Project
+        #251","identifier":"project_251","description":"Project #251 description","created_on":"2014-01-16T08:52:22Z","updated_on":"2014-01-16T08:52:22Z"},{"id":252,"name":"Project
+        #252","identifier":"project_252","description":"Project #252 description","parent":{"id":251,"name":"Project
+        #251"},"created_on":"2014-01-16T08:53:39Z","updated_on":"2014-01-16T08:53:39Z"},{"id":263,"name":"Project
+        #263","identifier":"project_263","description":"Project #263 description","created_on":"2014-04-02T19:25:26Z","updated_on":"2014-04-02T19:25:26Z"},{"id":194,"name":"Project
+        #194","identifier":"project_194","description":"Project #194 description","created_on":"2012-09-13T08:06:49Z","updated_on":"2012-09-13T08:06:49Z"},{"id":211,"name":"Project
+        #211","identifier":"project_211","description":"Project #211 description","parent":{"id":194,"name":"Project
+        #194"},"created_on":"2013-03-05T09:21:02Z","updated_on":"2013-03-05T09:21:02Z"},{"id":285,"name":"Project
+        #285","identifier":"project_285","description":"Project #285 description","created_on":"2014-11-11T14:30:54Z","updated_on":"2014-11-11T14:30:54Z"},{"id":273,"name":"Project
+        #273","identifier":"project_273","description":"Project #273 description","created_on":"2014-09-04T07:15:26Z","updated_on":"2014-09-04T07:15:26Z"},{"id":321,"name":"Project
+        #321","identifier":"project_321","description":"Project #321 description","parent":{"id":273,"name":"Project
+        #273"},"created_on":"2015-09-17T08:36:50Z","updated_on":"2015-09-17T08:36:50Z"},{"id":317,"name":"Project
+        #317","identifier":"project_317","description":"Project #317 description","parent":{"id":273,"name":"Project
+        #273"},"created_on":"2015-08-24T10:18:37Z","updated_on":"2015-08-24T10:18:37Z"},{"id":247,"name":"Project
+        #247","identifier":"project_247","description":"Project #247 description","created_on":"2013-11-04T11:35:27Z","updated_on":"2013-11-04T11:35:27Z"},{"id":248,"name":"Project
+        #248","identifier":"project_248","description":"Project #248 description","parent":{"id":247,"name":"Project
+        #247"},"created_on":"2013-11-04T11:36:06Z","updated_on":"2013-11-04T11:36:06Z"},{"id":210,"name":"Project
+        #210","identifier":"project_210","description":"Project #210 description","created_on":"2013-02-26T14:28:21Z","updated_on":"2013-02-26T14:28:21Z"},{"id":264,"name":"Project
+        #264","identifier":"project_264","description":"Project #264 description","parent":{"id":210,"name":"Project
+        #210"},"created_on":"2014-04-11T09:32:37Z","updated_on":"2014-04-11T09:32:37Z"},{"id":241,"name":"Project
+        #241","identifier":"project_241","description":"Project #241 description","parent":{"id":210,"name":"Project
+        #210"},"created_on":"2013-08-29T09:06:12Z","updated_on":"2013-08-29T09:06:12Z"},{"id":227,"name":"Project
+        #227","identifier":"project_227","description":"Project #227 description","created_on":"2013-06-04T13:48:35Z","updated_on":"2015-04-22T19:34:29Z"},{"id":272,"name":"Project
+        #272","identifier":"project_272","description":"Project #272 description","created_on":"2014-08-27T13:47:38Z","updated_on":"2014-08-27T13:47:38Z"},{"id":193,"name":"Project
+        #193","identifier":"project_193","description":"Project #193 description","created_on":"2012-09-11T13:53:14Z","updated_on":"2012-09-11T13:53:14Z"},{"id":216,"name":"Project
+        #216","identifier":"project_216","description":"Project #216 description","parent":{"id":193,"name":"Project
+        #193"},"created_on":"2013-04-01T18:04:49Z","updated_on":"2013-04-01T18:04:49Z"},{"id":316,"name":"Project
+        #316","identifier":"project_316","description":"Project #316 description","parent":{"id":216,"name":"Project
+        #216"},"created_on":"2015-08-17T07:53:57Z","updated_on":"2015-08-17T07:53:57Z"},{"id":214,"name":"Project
+        #214","identifier":"project_214","description":"Project #214 description","created_on":"2013-03-20T10:30:32Z","updated_on":"2014-03-25T14:52:25Z"},{"id":225,"name":"Project
+        #225","identifier":"project_225","description":"Project #225 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-06-04T09:21:30Z","updated_on":"2014-03-25T14:52:24Z"},{"id":240,"name":"Project
+        #240","identifier":"project_240","description":"Project #240 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-08-05T10:07:42Z","updated_on":"2014-03-25T14:52:24Z"},{"id":217,"name":"Project
+        #217","identifier":"project_217","description":"Project #217 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-04-04T10:42:34Z","updated_on":"2014-03-25T14:52:24Z"},{"id":222,"name":"Project
+        #222","identifier":"project_222","description":"Project #222 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-05-13T16:40:31Z","updated_on":"2014-03-25T14:52:24Z"},{"id":220,"name":"Project
+        #220","identifier":"project_220","description":"Project #220 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-05-03T08:52:40Z","updated_on":"2014-03-25T14:52:24Z"},{"id":230,"name":"Project
+        #230","identifier":"project_230","description":"Project #230 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-06-19T16:19:22Z","updated_on":"2014-03-25T14:52:24Z"},{"id":224,"name":"Project
+        #224","identifier":"project_224","description":"Project #224 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-05-14T10:45:52Z","updated_on":"2014-03-25T14:52:24Z"},{"id":239,"name":"Project
+        #239","identifier":"project_239","description":"Project #239 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-07-30T08:39:39Z","updated_on":"2014-03-25T14:52:24Z"},{"id":237,"name":"Project
+        #237","identifier":"project_237","description":"Project #237 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-07-16T08:10:17Z","updated_on":"2014-03-25T14:52:25Z"},{"id":232,"name":"Project
+        #232","identifier":"project_232","description":"Project #232 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-06-25T15:20:23Z","updated_on":"2014-03-25T14:52:25Z"},{"id":218,"name":"Project
+        #218","identifier":"project_218","description":"Project #218 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-04-12T08:30:24Z","updated_on":"2014-03-25T14:52:25Z"},{"id":235,"name":"Project
+        #235","identifier":"project_235","description":"Project #235 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-07-10T08:38:56Z","updated_on":"2014-03-25T14:52:25Z"},{"id":226,"name":"Project
+        #226","identifier":"project_226","description":"Project #226 description","parent":{"id":214,"name":"Project
+        #214"},"created_on":"2013-06-04T09:24:21Z","updated_on":"2014-03-25T14:52:25Z"},{"id":245,"name":"Project
+        #245","identifier":"project_245","description":"Project #245 description","created_on":"2013-10-11T07:48:53Z","updated_on":"2014-01-14T09:29:26Z"},{"id":238,"name":"Project
+        #238","identifier":"project_238","description":"Project #238 description","created_on":"2013-07-26T14:53:36Z","updated_on":"2013-07-26T14:53:36Z"},{"id":250,"name":"Project
+        #250","identifier":"project_250","description":"Project #250 description","parent":{"id":238,"name":"Project
+        #238"},"created_on":"2013-12-03T17:25:52Z","updated_on":"2013-12-03T17:26:29Z"},{"id":289,"name":"Project
+        #289","identifier":"project_289","description":"Project #289 description","created_on":"2015-01-21T15:44:34Z","updated_on":"2015-01-21T15:44:34Z"},{"id":258,"name":"Project
+        #258","identifier":"project_258","description":"Project #258 description","created_on":"2014-02-19T18:24:34Z","updated_on":"2014-02-21T11:20:53Z"},{"id":265,"name":"Project
+        #265","identifier":"project_265","description":"Project #265 description","parent":{"id":258,"name":"Project
+        #258"},"created_on":"2014-05-13T07:49:02Z","updated_on":"2015-04-22T19:34:51Z"},{"id":288,"name":"Project
+        #288","identifier":"project_288","description":"Project #288 description","created_on":"2015-01-20T15:59:22Z","updated_on":"2015-01-20T15:59:22Z"},{"id":300,"name":"Project
+        #300","identifier":"project_300","description":"Project #300 description","created_on":"2015-04-07T14:04:55Z","updated_on":"2015-04-07T14:04:55Z"},{"id":271,"name":"Project
+        #271","identifier":"project_271","description":"Project #271 description","parent":{"id":300,"name":"Project
+        #300"},"created_on":"2014-08-13T11:29:12Z","updated_on":"2015-03-20T10:59:52Z"},{"id":280,"name":"Project
+        #280","identifier":"project_280","description":"Project #280 description","parent":{"id":271,"name":"Project
+        #271"},"created_on":"2014-10-24T06:24:05Z","updated_on":"2014-10-30T13:58:21Z"},{"id":296,"name":"Project
+        #296","identifier":"project_296","description":"Project #296 description","parent":{"id":300,"name":"Project
+        #300"},"created_on":"2015-03-20T11:09:21Z","updated_on":"2015-03-20T11:09:21Z"},{"id":295,"name":"Project
+        #295","identifier":"project_295","description":"Project #295 description","parent":{"id":300,"name":"Project
+        #300"},"created_on":"2015-03-20T11:07:17Z","updated_on":"2015-03-20T11:07:17Z"},{"id":312,"name":"Project
+        #312","identifier":"project_312","description":"Project #312 description","parent":{"id":300,"name":"Project
+        #300"},"created_on":"2015-08-03T07:20:29Z","updated_on":"2015-08-03T07:20:29Z"},{"id":291,"name":"Project
+        #291","identifier":"project_291","description":"Project #291 description","created_on":"2015-02-13T22:35:38Z","updated_on":"2015-08-21T17:58:38Z"},{"id":2,"name":"Project
+        #2","identifier":"project_2","description":"Project #2 description","created_on":"2008-10-01T13:50:53Z","updated_on":"2015-04-22T19:48:06Z"},{"id":85,"name":"Project
+        #85","identifier":"project_85","description":"Project #85 description","parent":{"id":2,"name":"Project
+        #2"},"created_on":"2009-10-15T08:28:13Z","updated_on":"2015-04-22T19:48:06Z"},{"id":267,"name":"Project
+        #267","identifier":"project_267","description":"Project #267 description","created_on":"2014-06-24T15:42:50Z","updated_on":"2014-06-24T15:42:50Z"},{"id":262,"name":"Project
+        #262","identifier":"project_262","description":"Project #262 description","created_on":"2014-03-12T15:47:55Z","updated_on":"2014-03-12T15:47:55Z"},{"id":3,"name":"Project
+        #3","identifier":"project_3","description":"Project #3 description","created_on":"2008-10-01T13:56:56Z","updated_on":"2012-07-25T15:19:23Z"},{"id":13,"name":"Project
+        #13","identifier":"project_13","description":"Project #13 description","parent":{"id":3,"name":"Project
+        #3"},"created_on":"2008-10-08T05:51:23Z","updated_on":"2012-07-25T15:19:23Z"},{"id":10,"name":"Project
+        #10","identifier":"project_10","description":"Project #10 description","parent":{"id":3,"name":"Project
+        #3"},"created_on":"2008-10-07T08:46:48Z","updated_on":"2012-07-25T15:19:23Z"},{"id":80,"name":"Project
+        #80","identifier":"project_80","description":"Project #80 description","parent":{"id":3,"name":"Project
+        #3"},"created_on":"2009-09-30T10:01:52Z","updated_on":"2012-07-25T15:19:23Z"},{"id":17,"name":"Project
+        #17","identifier":"project_17","description":"Project #17 description","parent":{"id":3,"name":"Project
+        #3"},"created_on":"2008-10-10T10:28:57Z","updated_on":"2012-07-25T15:19:23Z"},{"id":22,"name":"Project
+        #22","identifier":"project_22","description":"Project #22 description","parent":{"id":3,"name":"Project
+        #3"},"created_on":"2008-10-20T15:07:53Z","updated_on":"2012-07-25T15:19:23Z"},{"id":270,"name":"Project
+        #270","identifier":"project_270","description":"Project #270 description","created_on":"2014-08-08T07:04:37Z","updated_on":"2014-08-08T07:38:56Z"},{"id":4,"name":"Project
+        #4","identifier":"project_4","description":"Project #4 description","created_on":"2008-10-01T15:00:59Z","updated_on":"2014-03-25T17:44:30Z"},{"id":29,"name":"Project
+        #29","identifier":"project_29","description":"Project #29 description","parent":{"id":4,"name":"Project
+        #4"},"created_on":"2009-01-12T12:11:03Z","updated_on":"2014-03-25T17:44:30Z"},{"id":5,"name":"Project
+        #5","identifier":"project_5","description":"Project #5 description","created_on":"2008-10-02T09:17:01Z","updated_on":"2012-07-25T15:19:23Z"},{"id":25,"name":"Project
+        #25","identifier":"project_25","description":"Project #25 description","parent":{"id":5,"name":"Project
+        #5"},"created_on":"2008-12-03T17:26:58Z","updated_on":"2012-07-25T15:19:23Z"},{"id":6,"name":"Project
+        #6","identifier":"project_6","description":"Project #6 description","created_on":"2008-10-03T05:32:15Z","updated_on":"2012-07-25T15:19:24Z"},{"id":181,"name":"Project
+        #181","identifier":"project_181","description":"Project #181 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2012-03-06T15:47:39Z","updated_on":"2012-07-25T15:19:23Z"},{"id":180,"name":"Project
+        #180","identifier":"project_180","description":"Project #180 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2012-02-28T10:55:12Z","updated_on":"2012-07-25T15:19:23Z"},{"id":94,"name":"Project
+        #94","identifier":"project_94","description":"Project #94 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-12-10T11:37:51Z","updated_on":"2012-07-25T15:19:23Z"},{"id":196,"name":"Project
+        #196","identifier":"project_196","description":"Project #196 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2012-09-19T16:13:03Z","updated_on":"2012-09-19T16:13:03Z"},{"id":123,"name":"Project
+        #123","identifier":"project_123","description":"Project #123 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-07-21T11:16:41Z","updated_on":"2012-07-25T15:19:23Z"},{"id":203,"name":"Project
+        #203","identifier":"project_203","description":"Project #203 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2012-12-18T12:51:09Z","updated_on":"2013-03-26T09:57:45Z"},{"id":206,"name":"Project
+        #206","identifier":"project_206","description":"Project #206 description","parent":{"id":203,"name":"Project
+        #203"},"created_on":"2013-01-30T14:37:33Z","updated_on":"2013-03-26T09:57:37Z"}],"total_count":310,"offset":0,"limit":100}'
     http_version: 
-  recorded_at: Wed, 07 Oct 2015 17:47:50 GMT
+  recorded_at: Mon, 26 Oct 2015 09:40:06 GMT
+- request:
+    method: get
+    uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/projects.json
+    body:
+      encoding: UTF-8
+      string: '{"limit":100,"offset":100}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"e832e28d35f8e93a40d071c74f5eff40"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 37e01bef9919d6997f1e2441dd2ce29b
+      X-Runtime:
+      - '0.427096'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.3/2015-08-18)
+      Date:
+      - Mon, 26 Oct 2015 09:40:07 GMT
+      Content-Length:
+      - '19799'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"projects":[{"id":192,"name":"Project #192","identifier":"project_192","description":"Project
+        #192 description","parent":{"id":6,"name":"Project #6"},"created_on":"2012-08-28T11:22:38Z","updated_on":"2012-08-28T11:22:38Z"},{"id":65,"name":"Project
+        #65","identifier":"project_65","description":"Project #65 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-08-13T11:45:04Z","updated_on":"2012-07-25T15:19:23Z"},{"id":103,"name":"Project
+        #103","identifier":"project_103","description":"Project #103 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-01-15T13:59:56Z","updated_on":"2012-07-25T15:19:23Z"},{"id":21,"name":"Project
+        #21","identifier":"project_21","description":"Project #21 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2008-10-16T14:52:10Z","updated_on":"2012-07-25T15:19:23Z"},{"id":79,"name":"Project
+        #79","identifier":"project_79","description":"Project #79 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-09-30T07:34:55Z","updated_on":"2015-04-22T19:36:29Z"},{"id":7,"name":"Project
+        #7","identifier":"project_7","description":"Project #7 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2008-10-03T05:32:43Z","updated_on":"2012-07-25T15:19:23Z"},{"id":46,"name":"Project
+        #46","identifier":"project_46","description":"Project #46 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-05-07T10:29:59Z","updated_on":"2012-07-25T15:19:23Z"},{"id":8,"name":"Project
+        #8","identifier":"project_8","description":"Project #8 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2008-10-03T05:33:02Z","updated_on":"2012-07-25T15:19:23Z"},{"id":43,"name":"Project
+        #43","identifier":"project_43","description":"Project #43 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-04-22T09:14:39Z","updated_on":"2012-07-25T15:19:23Z"},{"id":117,"name":"Project
+        #117","identifier":"project_117","description":"Project #117 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-04-27T16:15:49Z","updated_on":"2012-07-25T15:19:23Z"},{"id":105,"name":"Project
+        #105","identifier":"project_105","description":"Project #105 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-02-01T16:48:37Z","updated_on":"2015-04-22T19:36:45Z"},{"id":122,"name":"Project
+        #122","identifier":"project_122","description":"Project #122 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-07-20T07:59:44Z","updated_on":"2012-07-25T15:19:23Z"},{"id":109,"name":"Project
+        #109","identifier":"project_109","description":"Project #109 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-03-02T11:55:13Z","updated_on":"2015-04-22T19:36:12Z"},{"id":88,"name":"Project
+        #88","identifier":"project_88","description":"Project #88 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-11-12T11:49:51Z","updated_on":"2012-07-25T15:19:23Z"},{"id":159,"name":"Project
+        #159","identifier":"project_159","description":"Project #159 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2011-07-21T14:49:03Z","updated_on":"2012-07-25T15:19:24Z"},{"id":133,"name":"Project
+        #133","identifier":"project_133","description":"Project #133 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-11-15T14:24:14Z","updated_on":"2012-07-25T15:19:24Z"},{"id":119,"name":"Project
+        #119","identifier":"project_119","description":"Project #119 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2010-06-13T13:37:58Z","updated_on":"2015-04-22T19:35:44Z"},{"id":138,"name":"Project
+        #138","identifier":"project_138","description":"Project #138 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2011-02-09T17:28:33Z","updated_on":"2015-04-22T19:36:01Z"},{"id":53,"name":"Project
+        #53","identifier":"project_53","description":"Project #53 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-07-08T11:00:43Z","updated_on":"2012-07-25T15:19:24Z"},{"id":44,"name":"Project
+        #44","identifier":"project_44","description":"Project #44 description","parent":{"id":6,"name":"Project
+        #6"},"created_on":"2009-04-23T11:39:20Z","updated_on":"2012-07-25T15:19:24Z"},{"id":11,"name":"Project
+        #11","identifier":"project_11","description":"Project #11 description","created_on":"2008-10-08T05:42:58Z","updated_on":"2015-04-22T19:37:33Z"},{"id":12,"name":"Project
+        #12","identifier":"project_12","description":"Project #12 description","parent":{"id":11,"name":"Project
+        #11"},"created_on":"2008-10-08T05:44:14Z","updated_on":"2015-04-22T19:37:33Z"},{"id":9,"name":"Project
+        #9","identifier":"project_9","description":"Project #9 description","parent":{"id":11,"name":"Project
+        #11"},"created_on":"2008-10-06T08:56:06Z","updated_on":"2015-04-22T19:37:33Z"},{"id":16,"name":"Project
+        #16","identifier":"project_16","description":"Project #16 description","parent":{"id":11,"name":"Project
+        #11"},"created_on":"2008-10-10T10:22:46Z","updated_on":"2015-04-22T19:37:33Z"},{"id":14,"name":"Project
+        #14","identifier":"project_14","description":"Project #14 description","created_on":"2008-10-08T08:13:13Z","updated_on":"2014-03-25T17:44:58Z"},{"id":38,"name":"Project
+        #38","identifier":"project_38","description":"Project #38 description","parent":{"id":14,"name":"Project
+        #14"},"created_on":"2009-03-02T15:23:36Z","updated_on":"2014-03-25T17:44:58Z"},{"id":15,"name":"Project
+        #15","identifier":"project_15","description":"Project #15 description","created_on":"2008-10-09T08:22:45Z","updated_on":"2012-07-25T15:19:24Z"},{"id":18,"name":"Project
+        #18","identifier":"project_18","description":"Project #18 description","created_on":"2008-10-16T13:34:09Z","updated_on":"2012-07-25T15:19:24Z"},{"id":19,"name":"Project
+        #19","identifier":"project_19","description":"Project #19 description","parent":{"id":18,"name":"Project
+        #18"},"created_on":"2008-10-16T13:34:49Z","updated_on":"2012-07-25T15:19:24Z"},{"id":20,"name":"Project
+        #20","identifier":"project_20","description":"Project #20 description","parent":{"id":18,"name":"Project
+        #18"},"created_on":"2008-10-16T13:35:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":23,"name":"Project
+        #23","identifier":"project_23","description":"Project #23 description","created_on":"2008-10-28T11:54:56Z","updated_on":"2012-07-25T15:19:24Z"},{"id":26,"name":"Project
+        #26","identifier":"project_26","description":"Project #26 description","created_on":"2008-12-17T10:19:41Z","updated_on":"2012-07-25T15:19:24Z"},{"id":282,"name":"Project
+        #282","identifier":"project_282","description":"Project #282 description","created_on":"2014-11-05T16:48:23Z","updated_on":"2014-11-05T16:50:12Z"},{"id":266,"name":"Project
+        #266","identifier":"project_266","description":"Project #266 description","created_on":"2014-06-20T07:57:47Z","updated_on":"2014-06-20T07:57:47Z"},{"id":314,"name":"Project
+        #314","identifier":"project_314","description":"Project #314 description","created_on":"2015-08-10T11:14:47Z","updated_on":"2015-08-10T11:14:47Z"},{"id":315,"name":"Project
+        #315","identifier":"project_315","description":"Project #315 description","parent":{"id":314,"name":"Project
+        #314"},"created_on":"2015-08-10T11:17:06Z","updated_on":"2015-08-10T11:17:06Z"},{"id":283,"name":"Project
+        #283","identifier":"project_283","description":"Project #283 description","created_on":"2014-11-06T11:49:48Z","updated_on":"2014-11-06T11:49:48Z"},{"id":27,"name":"Project
+        #27","identifier":"project_27","description":"Project #27 description","created_on":"2008-12-30T10:51:49Z","updated_on":"2012-07-25T15:19:24Z"},{"id":62,"name":"Project
+        #62","identifier":"project_62","description":"Project #62 description","parent":{"id":27,"name":"Project
+        #27"},"created_on":"2009-08-10T16:06:48Z","updated_on":"2012-07-25T15:19:24Z"},{"id":61,"name":"Project
+        #61","identifier":"project_61","description":"Project #61 description","parent":{"id":27,"name":"Project
+        #27"},"created_on":"2009-08-10T16:06:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":60,"name":"Project
+        #60","identifier":"project_60","description":"Project #60 description","parent":{"id":27,"name":"Project
+        #27"},"created_on":"2009-08-10T16:05:53Z","updated_on":"2012-07-25T15:19:24Z"},{"id":28,"name":"Project
+        #28","identifier":"project_28","description":"Project #28 description","created_on":"2009-01-09T12:40:16Z","updated_on":"2012-07-25T15:19:24Z"},{"id":106,"name":"Project
+        #106","identifier":"project_106","description":"Project #106 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2010-02-01T17:07:41Z","updated_on":"2012-07-25T15:19:24Z"},{"id":41,"name":"Project
+        #41","identifier":"project_41","description":"Project #41 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-03-03T17:49:24Z","updated_on":"2012-07-25T15:19:24Z"},{"id":95,"name":"Project
+        #95","identifier":"project_95","description":"Project #95 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-12-14T12:05:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":40,"name":"Project
+        #40","identifier":"project_40","description":"Project #40 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-03-02T15:25:49Z","updated_on":"2012-07-25T15:19:24Z"},{"id":100,"name":"Project
+        #100","identifier":"project_100","description":"Project #100 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-12-29T12:24:23Z","updated_on":"2012-07-25T15:19:24Z"},{"id":102,"name":"Project
+        #102","identifier":"project_102","description":"Project #102 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2010-01-11T17:59:35Z","updated_on":"2012-07-25T15:19:24Z"},{"id":37,"name":"Project
+        #37","identifier":"project_37","description":"Project #37 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-03-02T15:22:42Z","updated_on":"2012-07-25T15:19:24Z"},{"id":39,"name":"Project
+        #39","identifier":"project_39","description":"Project #39 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-03-02T15:24:34Z","updated_on":"2012-07-25T15:19:24Z"},{"id":31,"name":"Project
+        #31","identifier":"project_31","description":"Project #31 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-01-16T11:44:51Z","updated_on":"2014-03-25T17:20:25Z"},{"id":30,"name":"Project
+        #30","identifier":"project_30","description":"Project #30 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-01-16T11:44:07Z","updated_on":"2014-03-25T17:20:36Z"},{"id":24,"name":"Project
+        #24","identifier":"project_24","description":"Project #24 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2008-11-06T17:28:22Z","updated_on":"2012-07-25T15:19:24Z"},{"id":33,"name":"Project
+        #33","identifier":"project_33","description":"Project #33 description","parent":{"id":28,"name":"Project
+        #28"},"created_on":"2009-01-21T13:19:27Z","updated_on":"2012-07-25T15:19:24Z"},{"id":34,"name":"Project
+        #34","identifier":"project_34","description":"Project #34 description","created_on":"2009-02-17T12:09:00Z","updated_on":"2015-04-22T19:40:13Z"},{"id":35,"name":"Project
+        #35","identifier":"project_35","description":"Project #35 description","created_on":"2009-02-17T16:02:17Z","updated_on":"2012-07-25T15:19:24Z"},{"id":311,"name":"Project
+        #311","identifier":"project_311","description":"Project #311 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2015-07-13T04:53:58Z","updated_on":"2015-07-13T04:53:58Z"},{"id":322,"name":"Project
+        #322","identifier":"project_322","description":"Project #322 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2015-09-18T08:42:18Z","updated_on":"2015-09-18T08:42:18Z"},{"id":48,"name":"Project
+        #48","identifier":"project_48","description":"Project #48 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2009-05-20T08:47:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":277,"name":"Project
+        #277","identifier":"project_277","description":"Project #277 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2014-09-29T07:47:46Z","updated_on":"2014-09-29T07:47:46Z"},{"id":87,"name":"Project
+        #87","identifier":"project_87","description":"Project #87 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2009-11-05T11:02:59Z","updated_on":"2012-07-25T15:19:24Z"},{"id":124,"name":"Project
+        #124","identifier":"project_124","description":"Project #124 description","parent":{"id":35,"name":"Project
+        #35"},"created_on":"2010-08-12T12:43:38Z","updated_on":"2012-07-25T15:19:24Z"},{"id":36,"name":"Project
+        #36","identifier":"project_36","description":"Project #36 description","created_on":"2009-02-24T10:07:46Z","updated_on":"2012-07-25T15:19:24Z"},{"id":42,"name":"Project
+        #42","identifier":"project_42","description":"Project #42 description","created_on":"2009-04-22T07:52:43Z","updated_on":"2015-04-22T19:39:00Z"},{"id":45,"name":"Project
+        #45","identifier":"project_45","description":"Project #45 description","created_on":"2009-04-23T16:50:23Z","updated_on":"2012-07-25T15:19:24Z"},{"id":134,"name":"Project
+        #134","identifier":"project_134","description":"Project #134 description","parent":{"id":45,"name":"Project
+        #45"},"created_on":"2011-01-03T09:19:36Z","updated_on":"2012-07-25T15:19:24Z"},{"id":55,"name":"Project
+        #55","identifier":"project_55","description":"Project #55 description","parent":{"id":45,"name":"Project
+        #45"},"created_on":"2009-07-29T11:08:52Z","updated_on":"2012-07-25T15:19:24Z"},{"id":66,"name":"Project
+        #66","identifier":"project_66","description":"Project #66 description","parent":{"id":45,"name":"Project
+        #45"},"created_on":"2009-08-25T22:40:59Z","updated_on":"2012-07-25T15:19:24Z"},{"id":131,"name":"Project
+        #131","identifier":"project_131","description":"Project #131 description","parent":{"id":45,"name":"Project
+        #45"},"created_on":"2010-11-08T17:25:30Z","updated_on":"2012-07-25T15:19:24Z"},{"id":47,"name":"Project
+        #47","identifier":"project_47","description":"Project #47 description","created_on":"2009-05-11T16:49:47Z","updated_on":"2015-04-22T19:39:12Z"},{"id":292,"name":"Project
+        #292","identifier":"project_292","description":"Project #292 description","created_on":"2015-02-20T10:00:13Z","updated_on":"2015-04-27T12:37:56Z"},{"id":49,"name":"Project
+        #49","identifier":"project_49","description":"Project #49 description","created_on":"2009-06-20T22:58:57Z","updated_on":"2015-04-22T19:45:28Z"},{"id":51,"name":"Project
+        #51","identifier":"project_51","description":"Project #51 description","created_on":"2009-06-26T11:57:03Z","updated_on":"2012-07-25T15:19:24Z"},{"id":54,"name":"Project
+        #54","identifier":"project_54","description":"Project #54 description","created_on":"2009-07-12T16:37:24Z","updated_on":"2015-04-22T19:40:25Z"},{"id":56,"name":"Project
+        #56","identifier":"project_56","description":"Project #56 description","created_on":"2009-07-29T16:47:35Z","updated_on":"2015-04-22T19:40:38Z"},{"id":57,"name":"Project
+        #57","identifier":"project_57","description":"Project #57 description","parent":{"id":56,"name":"Project
+        #56"},"created_on":"2009-07-29T16:48:35Z","updated_on":"2015-04-22T19:40:38Z"},{"id":58,"name":"Project
+        #58","identifier":"project_58","description":"Project #58 description","created_on":"2009-08-06T10:23:45Z","updated_on":"2012-07-25T15:19:24Z"},{"id":186,"name":"Project
+        #186","identifier":"project_186","description":"Project #186 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2012-05-24T09:46:29Z","updated_on":"2012-07-25T15:19:24Z"},{"id":59,"name":"Project
+        #59","identifier":"project_59","description":"Project #59 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2009-08-06T10:24:41Z","updated_on":"2012-07-25T15:19:24Z"},{"id":140,"name":"Project
+        #140","identifier":"project_140","description":"Project #140 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2011-02-21T08:44:19Z","updated_on":"2012-07-25T15:19:24Z"},{"id":64,"name":"Project
+        #64","identifier":"project_64","description":"Project #64 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2009-08-13T10:02:18Z","updated_on":"2012-07-25T15:19:24Z"},{"id":185,"name":"Project
+        #185","identifier":"project_185","description":"Project #185 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2012-05-10T15:52:17Z","updated_on":"2012-07-25T15:19:24Z"},{"id":86,"name":"Project
+        #86","identifier":"project_86","description":"Project #86 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2009-11-02T16:38:53Z","updated_on":"2013-10-20T20:43:29Z"},{"id":139,"name":"Project
+        #139","identifier":"project_139","description":"Project #139 description","parent":{"id":58,"name":"Project
+        #58"},"created_on":"2011-02-21T08:43:33Z","updated_on":"2012-07-25T15:19:24Z"},{"id":304,"name":"Project
+        #304","identifier":"project_304","description":"Project #304 description","created_on":"2015-05-29T21:16:55Z","updated_on":"2015-05-29T21:16:55Z"},{"id":63,"name":"Project
+        #63","identifier":"project_63","description":"Project #63 description","created_on":"2009-08-11T13:47:28Z","updated_on":"2012-07-25T15:19:24Z"},{"id":99,"name":"Project
+        #99","identifier":"project_99","description":"Project #99 description","parent":{"id":63,"name":"Project
+        #63"},"created_on":"2009-12-29T10:42:27Z","updated_on":"2012-07-25T15:19:24Z"},{"id":120,"name":"Project
+        #120","identifier":"project_120","description":"Project #120 description","parent":{"id":63,"name":"Project
+        #63"},"created_on":"2010-07-07T14:40:36Z","updated_on":"2012-07-25T15:19:24Z"},{"id":188,"name":"Project
+        #188","identifier":"project_188","description":"Project #188 description","parent":{"id":63,"name":"Project
+        #63"},"created_on":"2012-06-25T09:55:59Z","updated_on":"2012-07-25T15:19:24Z"},{"id":187,"name":"Project
+        #187","identifier":"project_187","description":"Project #187 description","parent":{"id":63,"name":"Project
+        #63"},"created_on":"2012-06-25T09:55:33Z","updated_on":"2012-07-25T15:19:24Z"},{"id":67,"name":"Project
+        #67","identifier":"project_67","description":"Project #67 description","created_on":"2009-08-25T22:41:32Z","updated_on":"2014-03-25T17:21:08Z"},{"id":71,"name":"Project
+        #71","identifier":"project_71","description":"Project #71 description","parent":{"id":67,"name":"Project
+        #67"},"created_on":"2009-09-07T11:28:21Z","updated_on":"2014-03-25T17:21:08Z"},{"id":90,"name":"Project
+        #90","identifier":"project_90","description":"Project #90 description","parent":{"id":67,"name":"Project
+        #67"},"created_on":"2009-11-30T10:30:34Z","updated_on":"2014-03-25T17:21:08Z"},{"id":68,"name":"Project
+        #68","identifier":"project_68","description":"Project #68 description","created_on":"2009-08-25T22:43:04Z","updated_on":"2014-03-25T17:21:21Z"},{"id":93,"name":"Project
+        #93","identifier":"project_93","description":"Project #93 description","parent":{"id":68,"name":"Project
+        #68"},"created_on":"2009-12-04T10:56:43Z","updated_on":"2014-03-25T17:21:21Z"},{"id":69,"name":"Project
+        #69","identifier":"project_69","description":"Project #69 description","created_on":"2009-09-02T08:41:34Z","updated_on":"2015-04-22T19:38:15Z"},{"id":32,"name":"Project
+        #32","identifier":"project_32","description":"Project #32 description","parent":{"id":69,"name":"Project
+        #69"},"created_on":"2009-01-16T11:55:53Z","updated_on":"2015-04-22T19:38:15Z"},{"id":70,"name":"Project
+        #70","identifier":"project_70","description":"Project #70 description","created_on":"2009-09-02T09:18:00Z","updated_on":"2012-07-25T15:19:24Z"},{"id":72,"name":"Project
+        #72","identifier":"project_72","description":"Project #72 description","created_on":"2009-09-16T13:48:47Z","updated_on":"2012-07-25T15:19:24Z"},{"id":77,"name":"Project
+        #77","identifier":"project_77","description":"Project #77 description","parent":{"id":72,"name":"Project
+        #72"},"created_on":"2009-09-18T15:54:39Z","updated_on":"2012-07-25T15:19:24Z"}],"total_count":310,"offset":100,"limit":100}'
+    http_version: 
+  recorded_at: Mon, 26 Oct 2015 09:40:07 GMT
+- request:
+    method: get
+    uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/projects.json
+    body:
+      encoding: UTF-8
+      string: '{"limit":100,"offset":200}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"68fc54d01e3ee78970c93c0d0c68a9b7"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cc9d31c5276a6afaaae53e05fbf40eea
+      X-Runtime:
+      - '0.417953'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.3/2015-08-18)
+      Date:
+      - Mon, 26 Oct 2015 09:40:07 GMT
+      Content-Length:
+      - '19187'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"projects":[{"id":73,"name":"Project #73","identifier":"project_73","description":"Project
+        #73 description","parent":{"id":72,"name":"Project #72"},"created_on":"2009-09-16T13:49:31Z","updated_on":"2012-07-25T15:19:24Z"},{"id":205,"name":"Project
+        #205","identifier":"project_205","description":"Project #205 description","parent":{"id":72,"name":"Project
+        #72"},"created_on":"2013-01-29T12:02:02Z","updated_on":"2013-01-29T12:02:02Z"},{"id":74,"name":"Project
+        #74","identifier":"project_74","description":"Project #74 description","parent":{"id":72,"name":"Project
+        #72"},"created_on":"2009-09-16T13:50:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":75,"name":"Project
+        #75","identifier":"project_75","description":"Project #75 description","created_on":"2009-09-17T09:27:53Z","updated_on":"2012-07-25T15:19:24Z"},{"id":84,"name":"Project
+        #84","identifier":"project_84","description":"Project #84 description","parent":{"id":75,"name":"Project
+        #75"},"created_on":"2009-10-09T12:25:25Z","updated_on":"2012-07-25T15:19:24Z"},{"id":82,"name":"Project
+        #82","identifier":"project_82","description":"Project #82 description","parent":{"id":75,"name":"Project
+        #75"},"created_on":"2009-10-05T16:49:55Z","updated_on":"2012-07-25T15:19:24Z"},{"id":76,"name":"Project
+        #76","identifier":"project_76","description":"Project #76 description","created_on":"2009-09-18T12:01:01Z","updated_on":"2012-07-25T15:19:24Z"},{"id":78,"name":"Project
+        #78","identifier":"project_78","description":"Project #78 description","created_on":"2009-09-22T10:50:52Z","updated_on":"2015-04-22T19:45:15Z"},{"id":81,"name":"Project
+        #81","identifier":"project_81","description":"Project #81 description","created_on":"2009-09-30T15:54:01Z","updated_on":"2012-07-25T15:19:24Z"},{"id":145,"name":"Project
+        #145","identifier":"project_145","description":"Project #145 description","parent":{"id":81,"name":"Project
+        #81"},"created_on":"2011-05-06T12:23:14Z","updated_on":"2012-07-25T15:19:24Z"},{"id":128,"name":"Project
+        #128","identifier":"project_128","description":"Project #128 description","parent":{"id":81,"name":"Project
+        #81"},"created_on":"2010-10-08T08:23:42Z","updated_on":"2012-07-25T15:19:24Z"},{"id":89,"name":"Project
+        #89","identifier":"project_89","description":"Project #89 description","created_on":"2009-11-19T15:43:58Z","updated_on":"2015-04-22T19:45:43Z"},{"id":91,"name":"Project
+        #91","identifier":"project_91","description":"Project #91 description","created_on":"2009-12-01T16:21:02Z","updated_on":"2012-07-25T15:19:24Z"},{"id":126,"name":"Project
+        #126","identifier":"project_126","description":"Project #126 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2010-09-28T17:01:13Z","updated_on":"2012-07-25T15:19:24Z"},{"id":152,"name":"Project
+        #152","identifier":"project_152","description":"Project #152 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-05-31T08:19:51Z","updated_on":"2012-07-25T15:19:24Z"},{"id":290,"name":"Project
+        #290","identifier":"project_290","description":"Project #290 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2015-01-28T11:14:45Z","updated_on":"2015-01-28T11:15:37Z"},{"id":297,"name":"Project
+        #297","identifier":"project_297","description":"Project #297 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2015-03-26T14:53:29Z","updated_on":"2015-03-26T14:53:29Z"},{"id":298,"name":"Project
+        #298","identifier":"project_298","description":"Project #298 description","parent":{"id":297,"name":"Project
+        #297"},"created_on":"2015-03-30T15:06:15Z","updated_on":"2015-03-30T15:06:15Z"},{"id":150,"name":"Project
+        #150","identifier":"project_150","description":"Project #150 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-05-19T10:20:35Z","updated_on":"2012-07-25T15:19:24Z"},{"id":142,"name":"Project
+        #142","identifier":"project_142","description":"Project #142 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-02-21T12:08:44Z","updated_on":"2012-07-25T15:19:24Z"},{"id":195,"name":"Project
+        #195","identifier":"project_195","description":"Project #195 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2012-09-17T13:57:31Z","updated_on":"2012-09-17T13:57:31Z"},{"id":165,"name":"Project
+        #165","identifier":"project_165","description":"Project #165 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-09-07T09:23:17Z","updated_on":"2012-07-25T15:19:24Z"},{"id":179,"name":"Project
+        #179","identifier":"project_179","description":"Project #179 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2012-02-24T12:30:31Z","updated_on":"2012-07-25T15:19:24Z"},{"id":143,"name":"Project
+        #143","identifier":"project_143","description":"Project #143 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-03-09T10:05:02Z","updated_on":"2012-07-25T15:19:24Z"},{"id":118,"name":"Project
+        #118","identifier":"project_118","description":"Project #118 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2010-05-24T15:33:26Z","updated_on":"2012-07-25T15:19:24Z"},{"id":172,"name":"Project
+        #172","identifier":"project_172","description":"Project #172 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-10-26T08:58:24Z","updated_on":"2012-07-25T15:19:24Z"},{"id":149,"name":"Project
+        #149","identifier":"project_149","description":"Project #149 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-05-19T10:17:37Z","updated_on":"2012-07-25T15:19:24Z"},{"id":144,"name":"Project
+        #144","identifier":"project_144","description":"Project #144 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-03-28T14:47:08Z","updated_on":"2012-07-25T15:19:24Z"},{"id":154,"name":"Project
+        #154","identifier":"project_154","description":"Project #154 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-06-08T14:27:06Z","updated_on":"2012-07-25T15:19:24Z"},{"id":158,"name":"Project
+        #158","identifier":"project_158","description":"Project #158 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-07-21T11:01:54Z","updated_on":"2012-07-25T15:19:24Z"},{"id":168,"name":"Project
+        #168","identifier":"project_168","description":"Project #168 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2011-10-11T07:51:57Z","updated_on":"2012-07-25T15:19:24Z"},{"id":313,"name":"Project
+        #313","identifier":"project_313","description":"Project #313 description","parent":{"id":91,"name":"Project
+        #91"},"created_on":"2015-08-06T12:27:27Z","updated_on":"2015-08-10T06:48:24Z"},{"id":308,"name":"Project
+        #308","identifier":"project_308","description":"Project #308 description","created_on":"2015-06-23T06:53:09Z","updated_on":"2015-06-23T06:53:09Z"},{"id":299,"name":"Project
+        #299","identifier":"project_299","description":"Project #299 description","created_on":"2015-04-01T16:10:22Z","updated_on":"2015-04-01T16:10:22Z"},{"id":92,"name":"Project
+        #92","identifier":"project_92","description":"Project #92 description","created_on":"2009-12-01T16:49:01Z","updated_on":"2015-04-22T19:45:00Z"},{"id":101,"name":"Project
+        #101","identifier":"project_101","description":"Project #101 description","created_on":"2010-01-07T17:02:32Z","updated_on":"2015-04-22T19:38:50Z"},{"id":107,"name":"Project
+        #107","identifier":"project_107","description":"Project #107 description","parent":{"id":101,"name":"Project
+        #101"},"created_on":"2010-02-12T10:36:18Z","updated_on":"2015-04-22T19:38:50Z"},{"id":104,"name":"Project
+        #104","identifier":"project_104","description":"Project #104 description","created_on":"2010-01-27T21:57:06Z","updated_on":"2012-07-25T15:19:24Z"},{"id":108,"name":"Project
+        #108","identifier":"project_108","description":"Project #108 description","created_on":"2010-03-01T17:08:39Z","updated_on":"2015-04-22T19:38:32Z"},{"id":286,"name":"Project
+        #286","identifier":"project_286","description":"Project #286 description","created_on":"2014-11-19T15:09:48Z","updated_on":"2014-11-19T15:09:48Z"},{"id":110,"name":"Project
+        #110","identifier":"project_110","description":"Project #110 description","created_on":"2010-03-17T09:21:26Z","updated_on":"2012-07-25T15:19:24Z"},{"id":116,"name":"Project
+        #116","identifier":"project_116","description":"Project #116 description","parent":{"id":110,"name":"Project
+        #110"},"created_on":"2010-04-26T09:38:40Z","updated_on":"2012-07-25T15:19:24Z"},{"id":111,"name":"Project
+        #111","identifier":"project_111","description":"Project #111 description","created_on":"2010-04-09T09:50:53Z","updated_on":"2012-07-25T15:19:24Z"},{"id":112,"name":"Project
+        #112","identifier":"project_112","description":"Project #112 description","parent":{"id":111,"name":"Project
+        #111"},"created_on":"2010-04-09T09:51:35Z","updated_on":"2012-07-25T15:19:24Z"},{"id":113,"name":"Project
+        #113","identifier":"project_113","description":"Project #113 description","created_on":"2010-04-16T10:18:52Z","updated_on":"2015-04-22T19:45:59Z"},{"id":115,"name":"Project
+        #115","identifier":"project_115","description":"Project #115 description","created_on":"2010-04-22T13:53:20Z","updated_on":"2015-04-22T19:46:09Z"},{"id":318,"name":"Project
+        #318","identifier":"project_318","description":"Project #318 description","created_on":"2015-09-07T06:45:39Z","updated_on":"2015-09-07T06:45:39Z"},{"id":121,"name":"Project
+        #121","identifier":"project_121","description":"Project #121 description","created_on":"2010-07-15T08:43:49Z","updated_on":"2014-03-25T17:22:03Z"},{"id":125,"name":"Project
+        #125","identifier":"project_125","description":"Project #125 description","created_on":"2010-09-28T16:16:17Z","updated_on":"2012-07-25T15:19:24Z"},{"id":127,"name":"Project
+        #127","identifier":"project_127","description":"Project #127 description","created_on":"2010-09-29T22:36:36Z","updated_on":"2015-04-22T19:40:04Z"},{"id":129,"name":"Project
+        #129","identifier":"project_129","description":"Project #129 description","created_on":"2010-10-26T08:00:35Z","updated_on":"2012-07-25T15:19:24Z"},{"id":176,"name":"Project
+        #176","identifier":"project_176","description":"Project #176 description","parent":{"id":129,"name":"Project
+        #129"},"created_on":"2012-01-16T12:54:52Z","updated_on":"2012-07-25T15:19:24Z"},{"id":155,"name":"Project
+        #155","identifier":"project_155","description":"Project #155 description","parent":{"id":129,"name":"Project
+        #129"},"created_on":"2011-06-14T17:41:41Z","updated_on":"2012-07-25T15:19:24Z"},{"id":130,"name":"Project
+        #130","identifier":"project_130","description":"Project #130 description","created_on":"2010-10-29T08:55:56Z","updated_on":"2015-04-22T19:40:50Z"},{"id":132,"name":"Project
+        #132","identifier":"project_132","description":"Project #132 description","created_on":"2010-11-15T11:15:16Z","updated_on":"2015-04-22T19:41:12Z"},{"id":135,"name":"Project
+        #135","identifier":"project_135","description":"Project #135 description","created_on":"2011-01-17T12:06:37Z","updated_on":"2012-07-25T15:19:24Z"},{"id":136,"name":"Project
+        #136","identifier":"project_136","description":"Project #136 description","created_on":"2011-01-31T10:29:15Z","updated_on":"2012-07-25T15:19:24Z"},{"id":137,"name":"Project
+        #137","identifier":"project_137","description":"Project #137 description","created_on":"2011-01-31T10:33:01Z","updated_on":"2015-04-22T19:41:23Z"},{"id":141,"name":"Project
+        #141","identifier":"project_141","description":"Project #141 description","created_on":"2011-02-21T09:34:34Z","updated_on":"2015-04-22T19:41:37Z"},{"id":146,"name":"Project
+        #146","identifier":"project_146","description":"Project #146 description","created_on":"2011-05-10T08:34:42Z","updated_on":"2012-07-25T15:19:24Z"},{"id":305,"name":"Project
+        #305","identifier":"project_305","description":"Project #305 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2015-06-01T05:03:20Z","updated_on":"2015-07-17T08:26:08Z"},{"id":182,"name":"Project
+        #182","identifier":"project_182","description":"Project #182 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2012-03-20T15:08:00Z","updated_on":"2013-02-26T11:37:02Z"},{"id":254,"name":"Project
+        #254","identifier":"project_254","description":"Project #254 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2014-01-22T19:13:23Z","updated_on":"2014-01-22T19:13:23Z"},{"id":174,"name":"Project
+        #174","identifier":"project_174","description":"Project #174 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2011-12-21T14:32:47Z","updated_on":"2013-02-26T11:17:22Z"},{"id":177,"name":"Project
+        #177","identifier":"project_177","description":"Project #177 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2012-02-16T12:03:49Z","updated_on":"2013-02-26T11:35:58Z"},{"id":148,"name":"Project
+        #148","identifier":"project_148","description":"Project #148 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2011-05-12T15:18:18Z","updated_on":"2013-02-26T11:36:47Z"},{"id":219,"name":"Project
+        #219","identifier":"project_219","description":"Project #219 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2013-04-24T17:14:16Z","updated_on":"2013-04-24T17:14:16Z"},{"id":253,"name":"Project
+        #253","identifier":"project_253","description":"Project #253 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2014-01-20T15:47:10Z","updated_on":"2014-01-20T15:47:10Z"},{"id":257,"name":"Project
+        #257","identifier":"project_257","description":"Project #257 description","parent":{"id":253,"name":"Project
+        #253"},"created_on":"2014-02-19T17:25:43Z","updated_on":"2014-02-19T17:25:43Z"},{"id":255,"name":"Project
+        #255","identifier":"project_255","description":"Project #255 description","parent":{"id":253,"name":"Project
+        #253"},"created_on":"2014-01-24T12:39:21Z","updated_on":"2014-01-24T12:39:21Z"},{"id":147,"name":"Project
+        #147","identifier":"project_147","description":"Project #147 description","parent":{"id":146,"name":"Project
+        #146"},"created_on":"2011-05-10T08:35:21Z","updated_on":"2012-07-25T15:19:24Z"},{"id":202,"name":"Project
+        #202","identifier":"project_202","description":"Project #202 description","created_on":"2012-11-19T16:49:11Z","updated_on":"2012-11-19T16:49:11Z"},{"id":228,"name":"Project
+        #228","identifier":"project_228","description":"Project #228 description","parent":{"id":202,"name":"Project
+        #202"},"created_on":"2013-06-13T10:25:47Z","updated_on":"2013-06-13T10:25:47Z"},{"id":151,"name":"Project
+        #151","identifier":"project_151","description":"Project #151 description","created_on":"2011-05-25T08:12:44Z","updated_on":"2015-04-22T19:42:36Z"},{"id":200,"name":"Project
+        #200","identifier":"project_200","description":"Project #200 description","parent":{"id":151,"name":"Project
+        #151"},"created_on":"2012-11-13T11:12:26Z","updated_on":"2015-04-22T19:42:36Z"},{"id":173,"name":"Project
+        #173","identifier":"project_173","description":"Project #173 description","parent":{"id":151,"name":"Project
+        #151"},"created_on":"2011-11-22T10:04:17Z","updated_on":"2015-04-22T19:42:36Z"},{"id":153,"name":"Project
+        #153","identifier":"project_153","description":"Project #153 description","created_on":"2011-06-08T09:00:43Z","updated_on":"2014-03-25T17:23:20Z"},{"id":156,"name":"Project
+        #156","identifier":"project_156","description":"Project #156 description","created_on":"2011-06-17T10:25:54Z","updated_on":"2014-03-25T17:23:47Z"},{"id":157,"name":"Project
+        #157","identifier":"project_157","description":"Project #157 description","created_on":"2011-06-30T16:41:32Z","updated_on":"2015-04-22T19:42:10Z"},{"id":160,"name":"Project
+        #160","identifier":"project_160","description":"Project #160 description","created_on":"2011-08-01T15:07:12Z","updated_on":"2015-04-22T19:41:59Z"},{"id":1,"name":"Project
+        #1","identifier":"project_1","description":"Project #1 description","created_on":"2008-10-01T13:45:06Z","updated_on":"2012-07-25T15:19:23Z"},{"id":161,"name":"Project
+        #161","identifier":"project_161","description":"Project #161 description","created_on":"2011-08-17T12:23:15Z","updated_on":"2012-07-25T15:19:24Z"},{"id":301,"name":"Project
+        #301","identifier":"project_301","description":"Project #301 description","created_on":"2015-04-14T14:30:58Z","updated_on":"2015-04-14T14:30:58Z"},{"id":162,"name":"Project
+        #162","identifier":"project_162","description":"Project #162 description","created_on":"2011-08-23T13:49:02Z","updated_on":"2014-03-25T17:24:02Z"},{"id":163,"name":"Project
+        #163","identifier":"project_163","description":"Project #163 description","created_on":"2011-08-31T15:33:42Z","updated_on":"2012-07-25T15:19:24Z"},{"id":166,"name":"Project
+        #166","identifier":"project_166","description":"Project #166 description","created_on":"2011-09-23T09:47:00Z","updated_on":"2012-07-25T15:19:24Z"},{"id":307,"name":"Project
+        #307","identifier":"project_307","description":"Project #307 description","created_on":"2015-06-16T13:39:59Z","updated_on":"2015-06-16T13:39:59Z"},{"id":169,"name":"Project
+        #169","identifier":"project_169","description":"Project #169 description","created_on":"2011-10-14T11:46:15Z","updated_on":"2015-04-22T19:42:49Z"},{"id":293,"name":"Project
+        #293","identifier":"project_293","description":"Project #293 description","created_on":"2015-02-26T15:15:13Z","updated_on":"2015-02-26T15:15:13Z"},{"id":170,"name":"Project
+        #170","identifier":"project_170","description":"Project #170 description","created_on":"2011-10-19T08:59:04Z","updated_on":"2012-07-25T15:19:24Z"},{"id":171,"name":"Project
+        #171","identifier":"project_171","description":"Project #171 description","created_on":"2011-10-19T10:59:32Z","updated_on":"2015-04-22T19:43:52Z"},{"id":175,"name":"Project
+        #175","identifier":"project_175","description":"Project #175 description","created_on":"2012-01-09T14:49:10Z","updated_on":"2012-07-25T15:19:24Z"},{"id":178,"name":"Project
+        #178","identifier":"project_178","description":"Project #178 description","created_on":"2012-02-20T12:31:51Z","updated_on":"2014-03-25T17:26:21Z"},{"id":204,"name":"Project
+        #204","identifier":"project_204","description":"Project #204 description","parent":{"id":178,"name":"Project
+        #178"},"created_on":"2012-12-28T12:05:34Z","updated_on":"2014-03-25T17:26:21Z"},{"id":269,"name":"Project
+        #269","identifier":"project_269","description":"Project #269 description","created_on":"2014-07-28T15:05:17Z","updated_on":"2014-07-28T15:05:17Z"},{"id":278,"name":"Project
+        #278","identifier":"project_278","description":"Project #278 description","created_on":"2014-09-29T18:36:24Z","updated_on":"2014-09-29T18:36:24Z"},{"id":183,"name":"Project
+        #183","identifier":"project_183","description":"Project #183 description","created_on":"2012-04-02T11:44:07Z","updated_on":"2015-04-22T19:43:38Z"},{"id":184,"name":"Project
+        #184","identifier":"project_184","description":"Project #184 description","created_on":"2012-04-25T18:10:52Z","updated_on":"2012-07-25T15:19:24Z"},{"id":189,"name":"Project
+        #189","identifier":"project_189","description":"Project #189 description","created_on":"2012-07-02T11:25:42Z","updated_on":"2014-03-25T17:24:14Z"},{"id":281,"name":"Project
+        #281","identifier":"project_281","description":"Project #281 description","created_on":"2014-11-05T16:38:57Z","updated_on":"2014-11-05T16:49:51Z"}],"total_count":310,"offset":200,"limit":100}'
+    http_version: 
+  recorded_at: Mon, 26 Oct 2015 09:40:07 GMT
+- request:
+    method: get
+    uri: http://23b17d15e66a9546bfc8d48f86087d44bff8d72c:23b17d15e66a9546bfc8d48f86087d44bff8d72c@localhost:3000/projects.json
+    body:
+      encoding: UTF-8
+      string: '{"limit":100,"offset":300}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: 'OK '
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"b6d76b42fba048bdd781e1b4b32ce1ba"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 02b988dde54d5eaa0c4b58169c460c8a
+      X-Runtime:
+      - '0.051158'
+      Server:
+      - WEBrick/1.3.1 (Ruby/2.2.3/2015-08-18)
+      Date:
+      - Mon, 26 Oct 2015 09:40:07 GMT
+      Content-Length:
+      - '1871'
+      Connection:
+      - Keep-Alive
+    body:
+      encoding: UTF-8
+      string: '{"projects":[{"id":287,"name":"Project #287","identifier":"project_287","description":"Project
+        #287 description","created_on":"2014-12-10T15:07:54Z","updated_on":"2014-12-10T15:07:54Z"},{"id":268,"name":"Project
+        #268","identifier":"project_268","description":"Project #268 description","created_on":"2014-07-17T06:00:16Z","updated_on":"2014-07-17T06:00:16Z"},{"id":190,"name":"Project
+        #190","identifier":"project_190","description":"Project #190 description","created_on":"2012-07-10T14:51:19Z","updated_on":"2012-07-25T15:19:24Z"},{"id":276,"name":"Project
+        #276","identifier":"project_276","description":"Project #276 description","created_on":"2014-09-23T12:28:30Z","updated_on":"2014-09-23T12:28:30Z"},{"id":221,"name":"Project
+        #221","identifier":"project_221","description":"Project #221 description","created_on":"2013-05-10T08:35:45Z","updated_on":"2013-05-10T08:35:45Z"},{"id":303,"name":"Project
+        #303","identifier":"project_303","description":"Project #303 description","created_on":"2015-05-13T13:42:09Z","updated_on":"2015-05-13T13:42:09Z"},{"id":302,"name":"Project
+        #302","identifier":"project_302","description":"Project #302 description","created_on":"2015-04-21T09:38:13Z","updated_on":"2015-04-21T09:38:13Z"},{"id":306,"name":"Project
+        #306","identifier":"project_306","description":"Project #306 description","parent":{"id":302,"name":"Project
+        #302"},"created_on":"2015-06-03T12:45:11Z","updated_on":"2015-06-03T12:45:11Z"},{"id":274,"name":"Project
+        #274","identifier":"project_274","description":"Project #274 description","created_on":"2014-09-23T08:00:38Z","updated_on":"2014-09-23T08:00:38Z"},{"id":275,"name":"Project
+        #275","identifier":"project_275","description":"Project #275 description","parent":{"id":274,"name":"Project
+        #274"},"created_on":"2014-09-23T12:22:18Z","updated_on":"2014-09-23T12:22:18Z"}],"total_count":310,"offset":300,"limit":100}'
+    http_version: 
+  recorded_at: Mon, 26 Oct 2015 09:40:07 GMT
 recorded_with: VCR 2.9.3
