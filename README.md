@@ -51,7 +51,7 @@ Would be the same as having the following in your environment (declared in `~/.b
 
 If both present **environment variables have priority** (remember that you can remove them from the environment running `unset NAME-OF-VARIABLE`).
 
-As **a general rule**, the `list` subcommand is the one assumed when omitted, but if a number is given then the `show` subcommand will be call using that number as param. For example, `redminerb issues` will show us last issues availables for our user, and `redminerb issue 11962` will show us the info of the the issue with id number 11962 (notice that also the singular can be used for the command, which is nice for these cases -thanks Thor!)
+As **a general rule**, the `list` subcommand is the one assumed when omitted, but if a number is given then the `show` subcommand will be call using that number as param. For example, `redminerb issues` will show us the **list** of the last issues availables for our user, and `redminerb issue 11962` will **show** us the info of the the issue with id number 11962 (notice that also the singular, *issue* here, can be used as the command, which sounds more natural for this feature -thanks Thor!)
 
 ### Configuration (config)
 
