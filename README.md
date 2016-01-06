@@ -22,24 +22,44 @@ Work in progress with RDD[1]: README > Spec > Implementation
 
 ## Usage
 
+    redminerb [COMMAND] [SUBCOMMAND|<id>]
+
+Behind the scenes `redminerb` uses the gem Thor, so calling it without params is the same as asking for help:
+
+    $ redminerb
+    Commands:
+      redminerb config                # Shows this session current configuration
+      redminerb help [COMMAND]        # Describe available commands or one specific command
+      redminerb issues [list|<id>]    # Manage Redmine's issues
+      redminerb projects [list|<id>]  # Manage Redmine's projects
+      redminerb users [list|<id>]     # Manage Redmine's users
+
 In order to use `redminerb` the URL and the API key of your Redmine REST API must be available in one of the following places:
 
-1. **In your environment**: using *REDMINERB_URL* and *REDMINERB_API_KEY* env. vars.
-2. **In `~/.redminerb.yml`**: as values of *url* and *api_key*.
+1. **In your environment**: using *REDMINERB_URL* and *REDMINERB_API_KEY* environment variables.
+2. **In `~/.redminerb.yml`**: as values of *url* and *api_key* keys.
 
 For example, this `~/.redminerb.yml`:
 
-    url: http://localhost:3000/
+    url: https://redmine.ruby-lang.org/
     api_key: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
 Would be the same as having the following in your environment (declared in `~/.bashrc`, for example):
 
-    export REDMINERB_URL=http://localhost:3000/
+    export REDMINERB_URL=https://redmine.ruby-lang.org/
     export REDMINERB_API_KEY=69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
-If both present **environment variables have priority**.
+If both present **environment variables have priority** (remember that you can remove them from the environment running `unset NAME-OF-VARIABLE`).
 
-As a general rule, the `list` subcomand is the one assumed when omitted, but if a number is given instead of a subcomand, then the `show` subcommand will be call using that number as param. For example `redminerb users 1` will show us the info of the first user of our Redmine. Notice that also the singular can be used for the command, which is nice for these cases (i.e. `redminerb user 1`, thanks Thor!)
+As **a general rule**, the `list` subcommand is the one assumed when omitted, but if a number is given then the `show` subcommand will be call using that number as param. For example, `redminerb issues` will show us last issues availables for our user, and `redminerb issue 11962` will show us the info of the the issue with id number 11962 (notice that also the singular can be used for the command, which is nice for these cases -thanks Thor!)
+
+### Configuration (config)
+
+To see the current configuration used by Redminerb run the `config` command:
+
+    $ redminerb config
+    URL:     https://redmine.ruby-lang.org/
+    API-KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
 
 ### Pagination
 
@@ -58,28 +78,26 @@ Because `list` is the default subcommand for the `users` command.
 
 ### Custom ERB templates
 
-The output of **a single resource** obtained with **the `show` subcommand can be customized creating the corresponding `.erb` file** in the *.redminerb/templates* directory. In the template we can access to the resource using its generic name, e.g. `user` or `issue`.
+The output of **a single resource** obtained with **the `show` subcommand can be customized creating the corresponding `.erb` file** in the `.redminerb/templates` directory. The `.redminerb` directory will be searched **first in the current directory and then in your home directory**.
 
-The default templates could be found in the *templates* directory.
+Into the template we access the resource using its generic name (`user`, `issue`, `project`...). The default templates used by *redminerb* and other examples could be found in the *templates* directory of this repository.
 
-For example, to customize the output of an issue, we write the following content in the `.redminerb/issue.erb` file:
+For example, to customize the output of an issue, we write the following content in the `.redminerb/templates/issue.erb` file:
 
     Number: <%= issue.id %>
     Title: <%= issue.subject %>
 
-The *.redminerb* directory will be search **in the current directory first**, and then in **your home directory**.
+We can also create a template to be used only when asked through **the `--template` option**. For example:
 
-We can also create other templates and use them through **the `--template` option**. For example:
+    $ redminerb user show 34 --template user_in_a_box
 
-    $ redminerb users show 34 --template user_in_a_box
-
-Will use the file `.redminerb/user_in_a_box.erb` as template, whose content could be the following:
+Will use the file `.redminerb/templates/user_in_a_box.erb` as template, whose content could be the following:
 
     <%= Redminerb.top %>
     <%= Redminerb.line user.login %>
     <%= Redminerb.bottom %>
 
-That would give us an output similar to this:
+...which will give us an output similar to this:
 
     ┌────────────────────────────────────┐
     │ roger.williams                     │
@@ -93,21 +111,11 @@ As you can see Redminerb give us also **some functions to draw** its output usin
 * **Redminerb.line** *string*: content into the box (i.e. `│ Example │`).
 * **Redminerb.separator**: a line from left to right (like *middle* wo/ box borders).
 
-Have fun with them!
-
-### Configuration (config)
-
-To see the current configuration used by Redminerb we have the `config` command:
-
-    $ redminerb config
-    URL:     http://localhost:3000/
-    API-KEY: 69b47d74e36a6757bac5d45f8398dd23bfa8f52c
-
 ### Users
 
 The **users** command is the wrapper for part of the [Users resource](http://www.redmine.org/projects/redmine/wiki/Rest_Users) of the Redmine REST API.
 
-**IMPORTANT: Be sure that your API key's user have the right permissions in the server.**
+**IMPORTANT: This is an admin command so be sure that your API key's user have that permission in the Redmine server. Otherwise a 403 exception will be thrown.**
 
 #### List current users
 
