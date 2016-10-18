@@ -53,6 +53,8 @@ If both present **environment variables have priority** (remember that you can r
 
 As **a general rule**, the `list` subcommand is the one assumed when omitted, but if a number is given then the `show` subcommand will be call using that number as param. For example, `redminerb issues` will show us the **list** of the last issues availables for our user, and `redminerb issue 11962` will **show** us the info of the the issue with id number 11962 (notice that also the singular, *issue* here, can be used as the command, which sounds more natural for this feature -thanks Thor!)
 
+You can find your API key on your account page in Redmine ( /my/account ) when logged in, on the right-hand pane of the default layout.
+
 ### Configuration (config)
 
 To see the current configuration used by Redminerb run the `config` command:
