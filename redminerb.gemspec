@@ -42,7 +42,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'climate_control' # fake ENV
   spec.add_development_dependency 'minitest-vcr'
-  spec.add_development_dependency 'webmock'
+  spec.add_development_dependency 'webmock', '= 1.24.6'
 
   spec.add_development_dependency 'rubocop'
 
