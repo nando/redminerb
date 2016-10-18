@@ -39,10 +39,10 @@ module Redminerb
     def get_json(path, params = {})
       Redminerb.init_required!
       res = _get(path, params)
-      if res.status == 404
-        fail Redminerb::NotFoundError, path
-      else
+      if res.success?
         JSON.parse(res.body)
+      else
+        fail StandardError, "ERROR (status code #{res.status})"
       end
     rescue JSON::ParserError => e
       raise e, "HTTP status code #{res.status}"
