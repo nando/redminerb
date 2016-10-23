@@ -12,6 +12,15 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :all, type: :boolean,
+                   desc: "List all the users at the database. Internally it makes\n" +
+                     <<-DESC
+                                 # as many HTTP requests to the REST API as needed. The
+                                 # --limit option says to redminerb the maximum number of
+                                 # users it should get with each request. To search consider
+                                 # using the --query option instead (if possible).
+                     DESC
+
       def list(user_id = nil)
         if user_id
           show user_id
@@ -42,7 +51,8 @@ module Redminerb
             end
             initializer_data[:current_command].options.keys.each do |option|
               next if option == :ask
-              value = ask("#{option.capitalize} [#{options[option]}]:", Thor::Shell::Color::GREEN)
+              value = ask("#{option.capitalize} [#{options[option]}]:",
+                          Thor::Shell::Color::GREEN)
               options[option] = value unless value.empty?
             end
             break if yes?('Is everything OK? (NO/yes)')

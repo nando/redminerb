@@ -4,11 +4,11 @@
     Redminerb.line("[#{issue.tracker.name}][#{issue.project.name}:##{issue.id}] #{issue.subject}"),
     Redminerb.middle,
     [
-      "Author: #{issue.author.name}",
-      "Assigned to: #{issue.assigned_to.name}",
-      "Status: #{issue.status.name}",
-      "Priority: #{issue.priority.name}"
-    ].map{|l| Redminerb.line l },
+      issue.author ? "Author: #{issue.author.name}" : nil,
+      issue.assigned_to ? "Assigned to: #{issue.assigned_to.name}" : nil,
+      issue.status ? "Status: #{issue.status.name}" : nil,
+      issue.priority ? "Priority: #{issue.priority.name}" : nil
+    ].compact.map{|l| Redminerb.line l },
     Redminerb.middle,
     issue.description.lines.map {|raw_line| Redminerb.line raw_line.chomp },
     Redminerb.middle,

@@ -7,11 +7,31 @@ module Redminerb
   class Client
     class UnprocessableEntity < StandardError; end
 
+    attr_reader :requests
+
     def initialize(cfg)
       @connection = Faraday.new(url: cfg.url) do |f|
         f.adapter Faraday.default_adapter
       end
       @connection.basic_auth(cfg.api_key, cfg.api_key)
+      @requests = 0
+    end
+
+    # Uses pagination (limit&offset) params to retreive all the resources of
+    # the collection "name" using "params" in each request. Returns an array
+    # with all the resources.
+    def get_collection(name, params = {})
+      offset = 0
+      params[:limit] ||= 100
+      [].tap do |resources|
+        loop do
+          params[:offset] = offset
+          response = get_json("/#{name}.json", params)
+          resources << response[name.to_s]
+          offset += params[:limit].to_i
+          break unless offset < response['total_count']
+        end
+      end.flatten
     end
 
     # Makes a GET request of the given 'path' param and returns the body of the
@@ -19,10 +39,10 @@ module Redminerb
     def get_json(path, params = {})
       Redminerb.init_required!
       res = _get(path, params)
-      if res.status == 404
-        fail Redminerb::NotFoundError, path
-      else
+      if res.success?
         JSON.parse(res.body)
+      else
+        fail StandardError, "ERROR (status code #{res.status})"
       end
     rescue JSON::ParserError => e
       raise e, "HTTP status code #{res.status}"
@@ -55,6 +75,7 @@ module Redminerb
     private
 
     def _get(path, params)
+      @requests += 1
       @connection.get do |req|
         req.url path
         req.headers['Content-Type'] = 'application/json'

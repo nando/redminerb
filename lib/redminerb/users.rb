@@ -14,13 +14,16 @@ module Redminerb
       #   end
       #
       # See lib/reminerb/cli/user.rb code to see other example/s.
-  
       def list(params)
-        Redminerb.client.get_json('/users.json', params)['users'].map do |user|
+        if params.delete(:all)
+          Redminerb.client.get_collection(:users, params)
+        else
+          Redminerb.client.get_json('/users.json', params)['users']
+        end.map do |user|
           OpenStruct.new user
         end
       end
-  
+
       # Creates a brand new user with the given params. In lib/reminerb/cli/user.rb
       # you can see which ones are required (or running 'redminerb users create'
       # from the command line).

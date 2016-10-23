@@ -1,6 +1,8 @@
 # Personal preferences
+Metrics/MethodLength:
+  Max: 12
 Metrics/LineLength:
-  Max: 99
+  Max: 92
 Style/SpaceInsideBlockBraces:
   Enabled: false
 Style/TrailingWhitespace:

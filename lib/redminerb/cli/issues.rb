@@ -10,11 +10,12 @@ module Redminerb
       # rubocop:disable Metrics/AbcSize
       # (disabled to let the "closed" option be managed here)
       desc 'list', 'Shows open issues in our Redmine'
-      option :offset,         aliases: :o
-      option :limit,          aliases: :l
-      option :closed,         aliases: :c, type: :boolean
-      option :assigned_to_id, aliases: :a
-      option :project_id,     aliases: :p
+      option :offset,           aliases: :o
+      option :limit,            aliases: :l
+      option :closed,           aliases: :c, type: :boolean
+      option :assigned_to_id,   aliases: :a
+      option :project_id,       aliases: :p
+      option :fixed_version_id, aliases: :v
       def list(issue_id = nil)
         if issue_id
           show(issue_id)

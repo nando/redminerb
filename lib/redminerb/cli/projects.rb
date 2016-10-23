@@ -11,6 +11,8 @@ module Redminerb
       option :name,   aliases: [:q, '--query'], banner: '<FILTER>'
       option :offset, aliases: :o
       option :limit, aliases: :l
+      option :all, type: :boolean
+
       def list(project_id = nil)
         if project_id
           show(project_id)
@@ -26,7 +28,9 @@ module Redminerb
       option :template, aliases: :t
       def show(project_id)
         Redminerb.init!
-        puts Redminerb::Template.render(:project, Redminerb::Projects.read(project_id), options)
+        puts Redminerb::Template.render(:project,
+                                        Redminerb::Projects.read(project_id),
+                                        options)
       end
     end
   end
