@@ -66,7 +66,11 @@ module Redminerb
         rescue JSON::ParserError
           errors = [res.body]
         end
-        fail UnprocessableEntity, errors.join("\n")
+        puts "Failed to process request. Reason:".red
+        errors.each do  |x|
+          puts " - #{x}".red
+        end
+        exit(1)
       else
         fail StandardError, "ERROR (status code #{res.status})"
       end
